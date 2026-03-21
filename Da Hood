@@ -121,6 +121,7 @@ local TextLabel_16 = Instance.new("TextLabel")
 --Properties:
 
 BobDaHood.Name = "BobDaHood"
+ScreenGui.ResetOnSpawn = true
 BobDaHood.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 BobDaHood.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
