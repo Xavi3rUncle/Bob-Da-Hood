@@ -1,0 +1,2587 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BobDaHood = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TopBar = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local Line = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local MainButton = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local MainFrame = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local Aimbot = Instance.new("TextLabel")
+local UICorner_6 = Instance.new("UICorner")
+local ImageButton = Instance.new("ImageButton")
+local UICorner_7 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
+local CframeWS = Instance.new("TextLabel")
+local UICorner_9 = Instance.new("UICorner")
+local ImageButton_2 = Instance.new("ImageButton")
+local UICorner_10 = Instance.new("UICorner")
+local TextLabel_3 = Instance.new("TextLabel")
+local UICorner_11 = Instance.new("UICorner")
+local InfJump = Instance.new("TextLabel")
+local UICorner_12 = Instance.new("UICorner")
+local ImageButton_3 = Instance.new("ImageButton")
+local UICorner_13 = Instance.new("UICorner")
+local TextLabel_4 = Instance.new("TextLabel")
+local UICorner_14 = Instance.new("UICorner")
+local ChatSpy = Instance.new("TextLabel")
+local UICorner_15 = Instance.new("UICorner")
+local ImageButton_4 = Instance.new("ImageButton")
+local UICorner_16 = Instance.new("UICorner")
+local TextLabel_5 = Instance.new("TextLabel")
+local UICorner_17 = Instance.new("UICorner")
+local Esp = Instance.new("TextLabel")
+local UICorner_18 = Instance.new("UICorner")
+local ImageButton_5 = Instance.new("ImageButton")
+local UICorner_19 = Instance.new("UICorner")
+local TextLabel_6 = Instance.new("TextLabel")
+local UICorner_20 = Instance.new("UICorner")
+local Line_2 = Instance.new("Frame")
+local NC = Instance.new("TextLabel")
+local UICorner_21 = Instance.new("UICorner")
+local ImageButton_6 = Instance.new("ImageButton")
+local UICorner_22 = Instance.new("UICorner")
+local TextLabel_7 = Instance.new("TextLabel")
+local UICorner_23 = Instance.new("UICorner")
+local TeleportButton = Instance.new("TextButton")
+local UICorner_24 = Instance.new("UICorner")
+local TeleportFrame = Instance.new("Frame")
+local UICorner_25 = Instance.new("UICorner")
+local Bank = Instance.new("TextButton")
+local UICorner_26 = Instance.new("UICorner")
+local Casino = Instance.new("TextButton")
+local UICorner_27 = Instance.new("UICorner")
+local BasketballCourt = Instance.new("TextButton")
+local UICorner_28 = Instance.new("UICorner")
+local FoodCourt1 = Instance.new("TextButton")
+local UICorner_29 = Instance.new("UICorner")
+local FoodCourt2 = Instance.new("TextButton")
+local UICorner_30 = Instance.new("UICorner")
+local GunShop1 = Instance.new("TextButton")
+local UICorner_31 = Instance.new("UICorner")
+local GunShop2 = Instance.new("TextButton")
+local UICorner_32 = Instance.new("UICorner")
+local PlayGround = Instance.new("TextButton")
+local UICorner_33 = Instance.new("UICorner")
+local GasStation = Instance.new("TextButton")
+local UICorner_34 = Instance.new("UICorner")
+local HighSchool = Instance.new("TextButton")
+local UICorner_35 = Instance.new("UICorner")
+local PoliceStation = Instance.new("TextButton")
+local UICorner_36 = Instance.new("UICorner")
+local TargetButton = Instance.new("TextButton")
+local UICorner_37 = Instance.new("UICorner")
+local TargetFrame = Instance.new("Frame")
+local UICorner_38 = Instance.new("UICorner")
+local Frame_2 = Instance.new("Frame")
+local UICorner_39 = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner_40 = Instance.new("UICorner")
+local TextLabel_8 = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local UICorner_41 = Instance.new("UICorner")
+local Fling = Instance.new("TextLabel")
+local UICorner_42 = Instance.new("UICorner")
+local ImageButton_7 = Instance.new("ImageButton")
+local UICorner_43 = Instance.new("UICorner")
+local TextLabel_9 = Instance.new("TextLabel")
+local UICorner_44 = Instance.new("UICorner")
+local Frame_3 = Instance.new("Frame")
+local Teleport = Instance.new("TextLabel")
+local UICorner_45 = Instance.new("UICorner")
+local ImageButton_8 = Instance.new("ImageButton")
+local UICorner_46 = Instance.new("UICorner")
+local TextLabel_10 = Instance.new("TextLabel")
+local UICorner_47 = Instance.new("UICorner")
+local View = Instance.new("TextLabel")
+local UICorner_48 = Instance.new("UICorner")
+local ImageButton_9 = Instance.new("ImageButton")
+local UICorner_49 = Instance.new("UICorner")
+local TextLabel_11 = Instance.new("TextLabel")
+local UICorner_50 = Instance.new("UICorner")
+local HeadSit = Instance.new("TextLabel")
+local UICorner_51 = Instance.new("UICorner")
+local ImageButton_10 = Instance.new("ImageButton")
+local UICorner_52 = Instance.new("UICorner")
+local TextLabel_12 = Instance.new("TextLabel")
+local UICorner_53 = Instance.new("UICorner")
+local AboutButton = Instance.new("TextButton")
+local UICorner_54 = Instance.new("UICorner")
+local AboutFrame = Instance.new("Frame")
+local UICorner_55 = Instance.new("UICorner")
+local TextLabel_13 = Instance.new("TextLabel")
+local TextLabel_14 = Instance.new("TextLabel")
+local TextLabel_15 = Instance.new("TextLabel")
+local TextLabel_16 = Instance.new("TextLabel")
+
+--Properties:
+
+BobDaHood.Name = "BobDaHood"
+BobDaHood.ResetOnSpawn = true
+BobDaHood.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+BobDaHood.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = BobDaHood
+Frame.BackgroundColor3 = Color3.fromRGB(48, 21, 88)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.274888545, 0, 0.206493512, 0)
+Frame.Size = UDim2.new(0.445765227, 0, 0.583116889, 0)
+
+UICorner.Parent = Frame
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Frame
+TopBar.BackgroundColor3 = Color3.fromRGB(199, 29, 255)
+TopBar.BorderColor3 = Color3.fromRGB(255, 255, 255)
+TopBar.BorderSizePixel = 0
+TopBar.Size = UDim2.new(1, 0, 0.133630291, 0)
+
+UICorner_2.Parent = TopBar
+
+TextLabel.Parent = TopBar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.216666669, 0, 0.0833333358, 0)
+TextLabel.Size = UDim2.new(0.528333306, 0, 0.833333313, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "🔫Bob Da Hood🐉"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel.TextStrokeTransparency = 0.000
+TextLabel.TextWrapped = true
+
+Line.Name = "Line"
+Line.Parent = Frame
+Line.BackgroundColor3 = Color3.fromRGB(252, 255, 53)
+Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Line.BorderSizePixel = 0
+Line.Position = UDim2.new(0, 0, 0.236080185, 0)
+Line.Size = UDim2.new(1, 0, -0.00222717156, 0)
+
+UICorner_3.Parent = Line
+
+MainButton.Name = "MainButton"
+MainButton.Parent = Frame
+MainButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainButton.BorderSizePixel = 0
+MainButton.Position = UDim2.new(0, 0, 0.133630291, 0)
+MainButton.Size = UDim2.new(0.185000002, 0, 0.0846325159, 0)
+MainButton.Font = Enum.Font.SourceSansBold
+MainButton.Text = "🏠Main"
+MainButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+MainButton.TextScaled = true
+MainButton.TextSize = 14.000
+MainButton.TextStrokeColor3 = Color3.fromRGB(204, 0, 255)
+MainButton.TextStrokeTransparency = 0.000
+MainButton.TextWrapped = true
+
+UICorner_4.Parent = MainButton
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = MainButton
+MainFrame.BackgroundColor3 = Color3.fromRGB(199, 29, 255)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.0720720738, 0, 1.36842108, 0)
+MainFrame.Size = UDim2.new(5.27027035, 0, 8.68421078, 0)
+MainFrame.Visible = false
+
+UICorner_5.Parent = MainFrame
+
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = MainFrame
+Aimbot.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Aimbot.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Aimbot.BorderSizePixel = 0
+Aimbot.Position = UDim2.new(0, 0, 0.724242449, 0)
+Aimbot.Size = UDim2.new(0.107692309, 0, 0.151515156, 0)
+Aimbot.Font = Enum.Font.SourceSansBold
+Aimbot.Text = "Aimbot"
+Aimbot.TextColor3 = Color3.fromRGB(0, 0, 0)
+Aimbot.TextScaled = true
+Aimbot.TextSize = 14.000
+Aimbot.TextWrapped = true
+
+UICorner_6.Parent = Aimbot
+
+ImageButton.Parent = Aimbot
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(1, 0, 0, 0)
+ImageButton.Size = UDim2.new(0.555555582, 0, 1, 0)
+
+UICorner_7.Parent = ImageButton
+
+TextLabel_2.Parent = Aimbot
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(1.55555558, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(1.6349206, 0, 0.980000019, 0)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "Click 't' to Aimbot on/off"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+UICorner_8.Parent = TextLabel_2
+
+CframeWS.Name = "CframeWS"
+CframeWS.Parent = MainFrame
+CframeWS.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+CframeWS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CframeWS.BorderSizePixel = 0
+CframeWS.Position = UDim2.new(0.355555564, 0, 0, 0)
+CframeWS.Size = UDim2.new(0.107692309, 0, 0.151515156, 0)
+CframeWS.Font = Enum.Font.SourceSansBold
+CframeWS.Text = "CFrame WalkSpeed"
+CframeWS.TextColor3 = Color3.fromRGB(0, 0, 0)
+CframeWS.TextScaled = true
+CframeWS.TextSize = 14.000
+CframeWS.TextWrapped = true
+
+UICorner_9.Parent = CframeWS
+
+ImageButton_2.Parent = CframeWS
+ImageButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_2.BorderSizePixel = 0
+ImageButton_2.Position = UDim2.new(1, 0, 0, 0)
+ImageButton_2.Size = UDim2.new(0.555555582, 0, 1, 0)
+
+UICorner_10.Parent = ImageButton_2
+
+TextLabel_3.Parent = CframeWS
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(1.55555558, 0, 0, 0)
+TextLabel_3.Size = UDim2.new(1.6349206, 0, 0.980000019, 0)
+TextLabel_3.Font = Enum.Font.SourceSansBold
+TextLabel_3.Text = "Hold Press Shift to Boost Walkseeed. "
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+UICorner_11.Parent = TextLabel_3
+
+InfJump.Name = "InfJump"
+InfJump.Parent = MainFrame
+InfJump.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+InfJump.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InfJump.BorderSizePixel = 0
+InfJump.Position = UDim2.new(0, 0, 0.536363661, 0)
+InfJump.Size = UDim2.new(0.107692309, 0, 0.151515156, 0)
+InfJump.Font = Enum.Font.SourceSansBold
+InfJump.Text = "Infinite Jump"
+InfJump.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfJump.TextScaled = true
+InfJump.TextSize = 14.000
+InfJump.TextWrapped = true
+
+UICorner_12.Parent = InfJump
+
+ImageButton_3.Parent = InfJump
+ImageButton_3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_3.BorderSizePixel = 0
+ImageButton_3.Position = UDim2.new(1, 0, 0, 0)
+ImageButton_3.Size = UDim2.new(0.555555582, 0, 1, 0)
+
+UICorner_13.Parent = ImageButton_3
+
+TextLabel_4.Parent = InfJump
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(1.55555558, 0, 0, 0)
+TextLabel_4.Size = UDim2.new(1.6349206, 0, 0.980000019, 0)
+TextLabel_4.Font = Enum.Font.SourceSansBold
+TextLabel_4.Text = "Just  a Infinite Jump"
+TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+UICorner_14.Parent = TextLabel_4
+
+ChatSpy.Name = "ChatSpy"
+ChatSpy.Parent = MainFrame
+ChatSpy.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+ChatSpy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ChatSpy.BorderSizePixel = 0
+ChatSpy.Position = UDim2.new(0, 0, 0.181818187, 0)
+ChatSpy.Size = UDim2.new(0.107692309, 0, 0.151515156, 0)
+ChatSpy.Font = Enum.Font.SourceSansBold
+ChatSpy.Text = "ChatSpy"
+ChatSpy.TextColor3 = Color3.fromRGB(0, 0, 0)
+ChatSpy.TextScaled = true
+ChatSpy.TextSize = 14.000
+ChatSpy.TextWrapped = true
+
+UICorner_15.Parent = ChatSpy
+
+ImageButton_4.Parent = ChatSpy
+ImageButton_4.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_4.BorderSizePixel = 0
+ImageButton_4.Position = UDim2.new(1, 0, 0, 0)
+ImageButton_4.Size = UDim2.new(0.555555582, 0, 1, 0)
+
+UICorner_16.Parent = ImageButton_4
+
+TextLabel_5.Parent = ChatSpy
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(1.55555558, 0, 0, 0)
+TextLabel_5.Size = UDim2.new(1.6349206, 0, 0.980000019, 0)
+TextLabel_5.Font = Enum.Font.SourceSansBold
+TextLabel_5.Text = "Spying Chat"
+TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+
+UICorner_17.Parent = TextLabel_5
+
+Esp.Name = "Esp"
+Esp.Parent = MainFrame
+Esp.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Esp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Esp.BorderSizePixel = 0
+Esp.Size = UDim2.new(0.107692309, 0, 0.151515156, 0)
+Esp.Font = Enum.Font.SourceSansBold
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.fromRGB(0, 0, 0)
+Esp.TextScaled = true
+Esp.TextSize = 14.000
+Esp.TextWrapped = true
+
+UICorner_18.Parent = Esp
+
+ImageButton_5.Parent = Esp
+ImageButton_5.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_5.BorderSizePixel = 0
+ImageButton_5.Position = UDim2.new(1, 0, 0, 0)
+ImageButton_5.Size = UDim2.new(0.555555582, 0, 1, 0)
+
+UICorner_19.Parent = ImageButton_5
+
+TextLabel_6.Parent = Esp
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Position = UDim2.new(1.55555558, 0, 0, 0)
+TextLabel_6.Size = UDim2.new(1.6349206, 0, 0.980000019, 0)
+TextLabel_6.Font = Enum.Font.SourceSansBold
+TextLabel_6.Text = "Display Players"
+TextLabel_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
+
+UICorner_20.Parent = TextLabel_6
+
+Line_2.Name = "Line"
+Line_2.Parent = MainFrame
+Line_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Line_2.BorderSizePixel = 0
+Line_2.Position = UDim2.new(0.345299155, 0, 0, 0)
+Line_2.Size = UDim2.new(0.0102564106, 0, 0.9939394, 0)
+
+NC.Name = "NC"
+NC.Parent = MainFrame
+NC.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+NC.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NC.BorderSizePixel = 0
+NC.Position = UDim2.new(0, 0, 0.357575744, 0)
+NC.Size = UDim2.new(0.107692309, 0, 0.14912276, 0)
+NC.Font = Enum.Font.SourceSansBold
+NC.Text = "NoClip"
+NC.TextColor3 = Color3.fromRGB(0, 0, 0)
+NC.TextScaled = true
+NC.TextSize = 14.000
+NC.TextWrapped = true
+
+UICorner_21.Parent = NC
+
+ImageButton_6.Parent = NC
+ImageButton_6.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_6.BorderSizePixel = 0
+ImageButton_6.Position = UDim2.new(0.99999994, 0, 0, 0)
+ImageButton_6.Size = UDim2.new(0.555555582, 0, 1, 0)
+
+UICorner_22.Parent = ImageButton_6
+
+TextLabel_7.Parent = NC
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_7.BorderSizePixel = 0
+TextLabel_7.Position = UDim2.new(1.55555546, 0, 0, 0)
+TextLabel_7.Size = UDim2.new(1.6349206, 0, 0.980000019, 0)
+TextLabel_7.Font = Enum.Font.SourceSansBold
+TextLabel_7.Text = "Click 'n' to Noclip on/off"
+TextLabel_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_7.TextScaled = true
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextWrapped = true
+
+UICorner_23.Parent = TextLabel_7
+
+TeleportButton.Name = "TeleportButton"
+TeleportButton.Parent = Frame
+TeleportButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TeleportButton.BorderSizePixel = 0
+TeleportButton.Position = UDim2.new(0.193333328, 0, 0.133630291, 0)
+TeleportButton.Size = UDim2.new(0.185000002, 0, 0.0846325159, 0)
+TeleportButton.Font = Enum.Font.SourceSansBold
+TeleportButton.Text = "💨Teleports"
+TeleportButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TeleportButton.TextScaled = true
+TeleportButton.TextSize = 14.000
+TeleportButton.TextStrokeColor3 = Color3.fromRGB(204, 0, 255)
+TeleportButton.TextStrokeTransparency = 0.000
+TeleportButton.TextWrapped = true
+
+UICorner_24.Parent = TeleportButton
+
+TeleportFrame.Name = "TeleportFrame"
+TeleportFrame.Parent = TeleportButton
+TeleportFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TeleportFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TeleportFrame.BorderSizePixel = 0
+TeleportFrame.Position = UDim2.new(-0.972972989, 0, 1.36842108, 0)
+TeleportFrame.Size = UDim2.new(5.27027035, 0, 8.68421078, 0)
+
+UICorner_25.Parent = TeleportFrame
+
+Bank.Name = "Bank"
+Bank.Parent = TeleportFrame
+Bank.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Bank.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bank.BorderSizePixel = 0
+Bank.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+Bank.Font = Enum.Font.SourceSansBold
+Bank.Text = "Bank"
+Bank.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bank.TextScaled = true
+Bank.TextSize = 14.000
+Bank.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+Bank.TextStrokeTransparency = 0.000
+Bank.TextWrapped = true
+
+UICorner_26.Parent = Bank
+
+Casino.Name = "Casino"
+Casino.Parent = TeleportFrame
+Casino.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Casino.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Casino.BorderSizePixel = 0
+Casino.Position = UDim2.new(0, 0, 0.203030303, 0)
+Casino.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+Casino.Font = Enum.Font.SourceSansBold
+Casino.Text = "Casino"
+Casino.TextColor3 = Color3.fromRGB(0, 0, 0)
+Casino.TextScaled = true
+Casino.TextSize = 14.000
+Casino.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+Casino.TextStrokeTransparency = 0.000
+Casino.TextWrapped = true
+
+UICorner_27.Parent = Casino
+
+BasketballCourt.Name = "BasketballCourt"
+BasketballCourt.Parent = TeleportFrame
+BasketballCourt.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+BasketballCourt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BasketballCourt.BorderSizePixel = 0
+BasketballCourt.Position = UDim2.new(0, 0, 0.424242437, 0)
+BasketballCourt.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+BasketballCourt.Font = Enum.Font.SourceSansBold
+BasketballCourt.Text = "BasketballCourt"
+BasketballCourt.TextColor3 = Color3.fromRGB(0, 0, 0)
+BasketballCourt.TextScaled = true
+BasketballCourt.TextSize = 14.000
+BasketballCourt.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+BasketballCourt.TextStrokeTransparency = 0.000
+BasketballCourt.TextWrapped = true
+
+UICorner_28.Parent = BasketballCourt
+
+FoodCourt1.Name = "FoodCourt1"
+FoodCourt1.Parent = TeleportFrame
+FoodCourt1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+FoodCourt1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FoodCourt1.BorderSizePixel = 0
+FoodCourt1.Position = UDim2.new(0, 0, 0.630303025, 0)
+FoodCourt1.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+FoodCourt1.Font = Enum.Font.SourceSansBold
+FoodCourt1.Text = "FoodCourt1"
+FoodCourt1.TextColor3 = Color3.fromRGB(0, 0, 0)
+FoodCourt1.TextScaled = true
+FoodCourt1.TextSize = 14.000
+FoodCourt1.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+FoodCourt1.TextStrokeTransparency = 0.000
+FoodCourt1.TextWrapped = true
+
+UICorner_29.Parent = FoodCourt1
+
+FoodCourt2.Name = "FoodCourt2"
+FoodCourt2.Parent = TeleportFrame
+FoodCourt2.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+FoodCourt2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FoodCourt2.BorderSizePixel = 0
+FoodCourt2.Position = UDim2.new(0, 0, 0.848484874, 0)
+FoodCourt2.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+FoodCourt2.Font = Enum.Font.SourceSansBold
+FoodCourt2.Text = "FoodCourt2"
+FoodCourt2.TextColor3 = Color3.fromRGB(0, 0, 0)
+FoodCourt2.TextScaled = true
+FoodCourt2.TextSize = 14.000
+FoodCourt2.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+FoodCourt2.TextStrokeTransparency = 0.000
+FoodCourt2.TextWrapped = true
+
+UICorner_30.Parent = FoodCourt2
+
+GunShop1.Name = "GunShop1"
+GunShop1.Parent = TeleportFrame
+GunShop1.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+GunShop1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GunShop1.BorderSizePixel = 0
+GunShop1.Position = UDim2.new(0.232478634, 0, 0, 0)
+GunShop1.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+GunShop1.Font = Enum.Font.SourceSansBold
+GunShop1.Text = "GunShop1"
+GunShop1.TextColor3 = Color3.fromRGB(0, 0, 0)
+GunShop1.TextScaled = true
+GunShop1.TextSize = 14.000
+GunShop1.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+GunShop1.TextStrokeTransparency = 0.000
+GunShop1.TextWrapped = true
+
+UICorner_31.Parent = GunShop1
+
+GunShop2.Name = "GunShop2"
+GunShop2.Parent = TeleportFrame
+GunShop2.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+GunShop2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GunShop2.BorderSizePixel = 0
+GunShop2.Position = UDim2.new(0.232478634, 0, 0.203030303, 0)
+GunShop2.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+GunShop2.Font = Enum.Font.SourceSansBold
+GunShop2.Text = "GunShop2"
+GunShop2.TextColor3 = Color3.fromRGB(0, 0, 0)
+GunShop2.TextScaled = true
+GunShop2.TextSize = 14.000
+GunShop2.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+GunShop2.TextStrokeTransparency = 0.000
+GunShop2.TextWrapped = true
+
+UICorner_32.Parent = GunShop2
+
+PlayGround.Name = "PlayGround"
+PlayGround.Parent = TeleportFrame
+PlayGround.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+PlayGround.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PlayGround.BorderSizePixel = 0
+PlayGround.Position = UDim2.new(0.232478634, 0, 0.424242437, 0)
+PlayGround.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+PlayGround.Font = Enum.Font.SourceSansBold
+PlayGround.Text = "PlayGround"
+PlayGround.TextColor3 = Color3.fromRGB(0, 0, 0)
+PlayGround.TextScaled = true
+PlayGround.TextSize = 14.000
+PlayGround.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+PlayGround.TextStrokeTransparency = 0.000
+PlayGround.TextWrapped = true
+
+UICorner_33.Parent = PlayGround
+
+GasStation.Name = "GasStation"
+GasStation.Parent = TeleportFrame
+GasStation.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+GasStation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GasStation.BorderSizePixel = 0
+GasStation.Position = UDim2.new(0.232478634, 0, 0.630303025, 0)
+GasStation.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+GasStation.Font = Enum.Font.SourceSansBold
+GasStation.Text = "GasStation"
+GasStation.TextColor3 = Color3.fromRGB(0, 0, 0)
+GasStation.TextScaled = true
+GasStation.TextSize = 14.000
+GasStation.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+GasStation.TextStrokeTransparency = 0.000
+GasStation.TextWrapped = true
+
+UICorner_34.Parent = GasStation
+
+HighSchool.Name = "HighSchool"
+HighSchool.Parent = TeleportFrame
+HighSchool.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+HighSchool.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HighSchool.BorderSizePixel = 0
+HighSchool.Position = UDim2.new(0.232478634, 0, 0.848484874, 0)
+HighSchool.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+HighSchool.Font = Enum.Font.SourceSansBold
+HighSchool.Text = "HighSchool"
+HighSchool.TextColor3 = Color3.fromRGB(0, 0, 0)
+HighSchool.TextScaled = true
+HighSchool.TextSize = 14.000
+HighSchool.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+HighSchool.TextStrokeTransparency = 0.000
+HighSchool.TextWrapped = true
+
+UICorner_35.Parent = HighSchool
+
+PoliceStation.Name = "PoliceStation"
+PoliceStation.Parent = TeleportFrame
+PoliceStation.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+PoliceStation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PoliceStation.BorderSizePixel = 0
+PoliceStation.Position = UDim2.new(0.461538464, 0, 0, 0)
+PoliceStation.Size = UDim2.new(0.184615389, 0, 0.151515156, 0)
+PoliceStation.Font = Enum.Font.SourceSansBold
+PoliceStation.Text = "PoliceStation"
+PoliceStation.TextColor3 = Color3.fromRGB(0, 0, 0)
+PoliceStation.TextScaled = true
+PoliceStation.TextSize = 14.000
+PoliceStation.TextStrokeColor3 = Color3.fromRGB(47, 255, 0)
+PoliceStation.TextStrokeTransparency = 0.000
+PoliceStation.TextWrapped = true
+
+UICorner_36.Parent = PoliceStation
+
+TargetButton.Name = "TargetButton"
+TargetButton.Parent = Frame
+TargetButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TargetButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TargetButton.BorderSizePixel = 0
+TargetButton.Position = UDim2.new(0.389997482, 0, 0.133630291, 0)
+TargetButton.Size = UDim2.new(0.184824899, 0, 0.0846325159, 0)
+TargetButton.Font = Enum.Font.SourceSansBold
+TargetButton.Text = "🎯Target"
+TargetButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TargetButton.TextScaled = true
+TargetButton.TextSize = 14.000
+TargetButton.TextStrokeColor3 = Color3.fromRGB(204, 0, 255)
+TargetButton.TextStrokeTransparency = 0.000
+TargetButton.TextWrapped = true
+
+UICorner_37.Parent = TargetButton
+
+TargetFrame.Name = "TargetFrame"
+TargetFrame.Parent = TargetButton
+TargetFrame.BackgroundColor3 = Color3.fromRGB(251, 255, 0)
+TargetFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TargetFrame.BorderSizePixel = 0
+TargetFrame.Position = UDim2.new(-2.03669715, 0, 1.34210527, 0)
+TargetFrame.Size = UDim2.new(5.26605511, 0, 8.68421078, 0)
+TargetFrame.Visible = false
+
+UICorner_38.Parent = TargetFrame
+
+Frame_2.Parent = TargetFrame
+Frame_2.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(-5.22580237e-08, 0, 0, 0)
+Frame_2.Size = UDim2.new(1.00000012, 0, 0.303030312, 0)
+
+UICorner_39.Parent = Frame_2
+
+ImageLabel.Parent = Frame_2
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.00511945412, 0, 0.0500000007, 0)
+ImageLabel.Size = UDim2.new(0.150170654, 0, 0.879999995, 0)
+ImageLabel.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+UICorner_40.CornerRadius = UDim.new(10, 0)
+UICorner_40.Parent = ImageLabel
+
+TextLabel_8.Parent = Frame_2
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_8.BorderSizePixel = 0
+TextLabel_8.Position = UDim2.new(0.174061432, 0, 0.230000004, 0)
+TextLabel_8.Size = UDim2.new(0.390784979, 0, 0.5, 0)
+TextLabel_8.Font = Enum.Font.SourceSansBold
+TextLabel_8.Text = "Enter Player Username:"
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.TextScaled = true
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextWrapped = true
+
+TextBox.Parent = Frame_2
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.590443671, 0, 0.230000004, 0)
+TextBox.Size = UDim2.new(0.397610933, 0, 0.5, 0)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+
+UICorner_41.Parent = TextBox
+
+Fling.Name = "Fling"
+Fling.Parent = TargetFrame
+Fling.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Fling.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Fling.BorderSizePixel = 0
+Fling.Position = UDim2.new(0, 0, 0.318181813, 0)
+Fling.Size = UDim2.new(0.106271774, 0, 0.151515156, 0)
+Fling.Font = Enum.Font.SourceSansBold
+Fling.Text = "Fling"
+Fling.TextColor3 = Color3.fromRGB(0, 0, 0)
+Fling.TextScaled = true
+Fling.TextSize = 14.000
+Fling.TextWrapped = true
+
+UICorner_42.Parent = Fling
+
+ImageButton_7.Parent = Fling
+ImageButton_7.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_7.BorderSizePixel = 0
+ImageButton_7.Position = UDim2.new(1.00000012, 0, 0, 0)
+ImageButton_7.Size = UDim2.new(0.540983617, 0, 1, 0)
+
+UICorner_43.Parent = ImageButton_7
+
+TextLabel_9.Parent = Fling
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_9.BorderSizePixel = 0
+TextLabel_9.Position = UDim2.new(1.57377064, 0, 0, 0)
+TextLabel_9.Size = UDim2.new(1.62295091, 0, 0.980000019, 0)
+TextLabel_9.Font = Enum.Font.SourceSansBold
+TextLabel_9.Text = "Fling Player"
+TextLabel_9.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_9.TextScaled = true
+TextLabel_9.TextSize = 14.000
+TextLabel_9.TextWrapped = true
+
+UICorner_44.Parent = TextLabel_9
+
+Frame_3.Parent = TargetFrame
+Frame_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(1.04516047e-07, 0, 0.303030312, 0)
+Frame_3.Size = UDim2.new(1, 0, 0.0181818176, 0)
+
+Teleport.Name = "Teleport"
+Teleport.Parent = TargetFrame
+Teleport.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+Teleport.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Teleport.BorderSizePixel = 0
+Teleport.Position = UDim2.new(0, 0, 0.4969697, 0)
+Teleport.Size = UDim2.new(0.106271774, 0, 0.151515156, 0)
+Teleport.Font = Enum.Font.SourceSansBold
+Teleport.Text = "Teleport"
+Teleport.TextColor3 = Color3.fromRGB(0, 0, 0)
+Teleport.TextScaled = true
+Teleport.TextSize = 14.000
+Teleport.TextWrapped = true
+
+UICorner_45.Parent = Teleport
+
+ImageButton_8.Parent = Teleport
+ImageButton_8.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_8.BorderSizePixel = 0
+ImageButton_8.Position = UDim2.new(1.00000012, 0, 0, 0)
+ImageButton_8.Size = UDim2.new(0.540983617, 0, 1, 0)
+
+UICorner_46.Parent = ImageButton_8
+
+TextLabel_10.Parent = Teleport
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_10.BorderSizePixel = 0
+TextLabel_10.Position = UDim2.new(1.57377064, 0, 0, 0)
+TextLabel_10.Size = UDim2.new(1.62295091, 0, 0.980000019, 0)
+TextLabel_10.Font = Enum.Font.SourceSansBold
+TextLabel_10.Text = "Teleport Player"
+TextLabel_10.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_10.TextScaled = true
+TextLabel_10.TextSize = 14.000
+TextLabel_10.TextWrapped = true
+
+UICorner_47.Parent = TextLabel_10
+
+View.Name = "View"
+View.Parent = TargetFrame
+View.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+View.BorderColor3 = Color3.fromRGB(0, 0, 0)
+View.BorderSizePixel = 0
+View.Position = UDim2.new(0, 0, 0.672727287, 0)
+View.Size = UDim2.new(0.106271774, 0, 0.151515156, 0)
+View.Font = Enum.Font.SourceSansBold
+View.Text = "View"
+View.TextColor3 = Color3.fromRGB(0, 0, 0)
+View.TextScaled = true
+View.TextSize = 14.000
+View.TextWrapped = true
+
+UICorner_48.Parent = View
+
+ImageButton_9.Parent = View
+ImageButton_9.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_9.BorderSizePixel = 0
+ImageButton_9.Position = UDim2.new(1.00000012, 0, 0, 0)
+ImageButton_9.Size = UDim2.new(0.540983617, 0, 1, 0)
+
+UICorner_49.Parent = ImageButton_9
+
+TextLabel_11.Parent = View
+TextLabel_11.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_11.BorderSizePixel = 0
+TextLabel_11.Position = UDim2.new(1.57377064, 0, 0, 0)
+TextLabel_11.Size = UDim2.new(1.62295091, 0, 0.980000019, 0)
+TextLabel_11.Font = Enum.Font.SourceSansBold
+TextLabel_11.Text = "View Player"
+TextLabel_11.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_11.TextScaled = true
+TextLabel_11.TextSize = 14.000
+TextLabel_11.TextWrapped = true
+
+UICorner_50.Parent = TextLabel_11
+
+HeadSit.Name = "HeadSit"
+HeadSit.Parent = TargetFrame
+HeadSit.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+HeadSit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadSit.BorderSizePixel = 0
+HeadSit.Position = UDim2.new(0, 0, 0.848484874, 0)
+HeadSit.Size = UDim2.new(0.106271774, 0, 0.151515156, 0)
+HeadSit.Font = Enum.Font.SourceSansBold
+HeadSit.Text = "HeadSit"
+HeadSit.TextColor3 = Color3.fromRGB(0, 0, 0)
+HeadSit.TextScaled = true
+HeadSit.TextSize = 14.000
+HeadSit.TextWrapped = true
+
+UICorner_51.Parent = HeadSit
+
+ImageButton_10.Parent = HeadSit
+ImageButton_10.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton_10.BorderSizePixel = 0
+ImageButton_10.Position = UDim2.new(1.00000012, 0, 0, 0)
+ImageButton_10.Size = UDim2.new(0.540983617, 0, 1, 0)
+
+UICorner_52.Parent = ImageButton_10
+
+TextLabel_12.Parent = HeadSit
+TextLabel_12.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_12.BorderSizePixel = 0
+TextLabel_12.Position = UDim2.new(1.57377064, 0, 0, 0)
+TextLabel_12.Size = UDim2.new(1.62295091, 0, 0.980000019, 0)
+TextLabel_12.Font = Enum.Font.SourceSansBold
+TextLabel_12.Text = "Headsit Player"
+TextLabel_12.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_12.TextScaled = true
+TextLabel_12.TextSize = 14.000
+TextLabel_12.TextWrapped = true
+
+UICorner_53.Parent = TextLabel_12
+
+AboutButton.Name = "AboutButton"
+AboutButton.Parent = Frame
+AboutButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AboutButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AboutButton.BorderSizePixel = 0
+AboutButton.Position = UDim2.new(0.813333333, 0, 0.133630291, 0)
+AboutButton.Size = UDim2.new(0.185000002, 0, 0.0846325159, 0)
+AboutButton.Font = Enum.Font.SourceSansBold
+AboutButton.Text = "📢About Script"
+AboutButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+AboutButton.TextScaled = true
+AboutButton.TextSize = 14.000
+AboutButton.TextStrokeColor3 = Color3.fromRGB(204, 0, 255)
+AboutButton.TextStrokeTransparency = 0.000
+AboutButton.TextWrapped = true
+
+UICorner_54.Parent = AboutButton
+
+AboutFrame.Name = "AboutFrame"
+AboutFrame.Parent = AboutButton
+AboutFrame.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+AboutFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AboutFrame.BorderSizePixel = 0
+AboutFrame.Position = UDim2.new(-4.35135126, 0, 1.39473689, 0)
+AboutFrame.Size = UDim2.new(5.30630636, 0, 8.6315794, 0)
+AboutFrame.Visible = false
+
+UICorner_55.Parent = AboutFrame
+
+TextLabel_13.Parent = AboutFrame
+TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_13.BorderSizePixel = 0
+TextLabel_13.Size = UDim2.new(0.339558572, 0, 0.152439013, 0)
+TextLabel_13.Font = Enum.Font.SourceSansBold
+TextLabel_13.Text = "Click 'v' to hide"
+TextLabel_13.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_13.TextScaled = true
+TextLabel_13.TextSize = 14.000
+TextLabel_13.TextWrapped = true
+
+TextLabel_14.Parent = AboutFrame
+TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_14.BorderSizePixel = 0
+TextLabel_14.Position = UDim2.new(0, 0, 0.847560883, 0)
+TextLabel_14.Size = UDim2.new(1, 0, 0.152439013, 0)
+TextLabel_14.Font = Enum.Font.SourceSansBold
+TextLabel_14.Text = "Thanks for using this script"
+TextLabel_14.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_14.TextScaled = true
+TextLabel_14.TextSize = 14.000
+TextLabel_14.TextWrapped = true
+
+TextLabel_15.Parent = AboutFrame
+TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_15.BorderSizePixel = 0
+TextLabel_15.Position = UDim2.new(0, 0, 0.551829219, 0)
+TextLabel_15.Size = UDim2.new(1, 0, 0.295731694, 0)
+TextLabel_15.Font = Enum.Font.SourceSansBold
+TextLabel_15.Text = "This script is recently made, so please be patience for new update"
+TextLabel_15.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_15.TextScaled = true
+TextLabel_15.TextSize = 14.000
+TextLabel_15.TextWrapped = true
+
+TextLabel_16.Parent = AboutFrame
+TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_16.BorderSizePixel = 0
+TextLabel_16.Position = UDim2.new(0, 0, 0.399390221, 0)
+TextLabel_16.Size = UDim2.new(0.339558572, 0, 0.152439013, 0)
+TextLabel_16.Font = Enum.Font.SourceSansBold
+TextLabel_16.Text = ".gg/ngVKyKWEay"
+TextLabel_16.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_16.TextScaled = true
+TextLabel_16.TextSize = 14.000
+TextLabel_16.TextWrapped = true
+
+-- Scripts:
+
+local function CMIDPIG_fake_script() -- ImageButton.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local camera = workspace.CurrentCamera
+	
+	local ToggleButton = script.Parent
+	
+	local TOGGLE_KEY = Enum.KeyCode.T
+	local MAX_DISTANCE = 400            -- studs
+	local LOCK_RADIUS = 300             -- pixels from crosshair
+	local SMOOTHNESS = 28               -- higher = tighter lock
+	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
+	-- ====================
+	
+	local enabled = false
+	
+	local lockedChar = nil
+	local lockedPart = nil
+	local aimPos = nil
+	local locked = false
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function clearLock()
+		locked = false
+		lockedPart = nil
+		lockedChar = nil
+		aimPos = nil
+	end
+	
+	-- ===== Your original utilities (unchanged) =====
+	local function getTorso(char)
+		return char:FindFirstChild("UpperTorso")
+			or char:FindFirstChild("Torso")
+			or char:FindFirstChild("HumanoidRootPart")
+	end
+	
+	local function alive(char)
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		return hum and hum.Health > 0
+	end
+	
+	local function screenDistance(worldPos)
+		local v, onScreen = camera:WorldToViewportPoint(worldPos)
+		if not onScreen then return math.huge end
+		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+		return (Vector2.new(v.X, v.Y) - center).Magnitude
+	end
+	
+	local function findTarget()
+		local myChar = player.Character
+		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
+		if not myRoot then return end
+	
+		local best, bestScore
+	
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character and alive(plr.Character) then
+				local part = getTorso(plr.Character)
+				if part then
+					local dist = (part.Position - myRoot.Position).Magnitude
+					if dist <= MAX_DISTANCE then
+						local sDist = screenDistance(part.Position)
+						if sDist <= LOCK_RADIUS then
+							local score = sDist + dist * 0.04
+							if not bestScore or score < bestScore then
+								bestScore = score
+								best = part
+							end
+						end
+					end
+				end
+			end
+		end
+	
+		return best
+	end
+	-- ==============================================
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		if not enabled then
+			clearLock() -- if you turn it OFF, it stops locking immediately
+		end
+		updateButton()
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if input.KeyCode ~= TOGGLE_KEY then return end
+		if not enabled then return end
+	
+		if locked then
+			clearLock()
+		else
+			local part = findTarget()
+			if part then
+				locked = true
+				lockedPart = part
+				lockedChar = part.Parent
+				aimPos = part.Position
+			end
+		end
+	end)
+	
+	RunService.RenderStepped:Connect(function(dt)
+		if not enabled then return end
+		if not locked then return end
+	
+		if not lockedChar or not alive(lockedChar) then
+			clearLock()
+			return
+		end
+	
+		lockedPart = getTorso(lockedChar)
+		if not lockedPart then
+			clearLock()
+			return
+		end
+	
+		local vel = lockedPart.AssemblyLinearVelocity
+		local predicted = lockedPart.Position + vel * PREDICTION
+	
+		aimPos = aimPos or predicted
+		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
+		aimPos = aimPos:Lerp(predicted, alpha)
+	
+		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
+	end)
+	
+	-- Optional: clear lock on respawn
+	player.CharacterAdded:Connect(function()
+		clearLock()
+	end)
+	
+	updateButton()
+	
+end
+coroutine.wrap(CMIDPIG_fake_script)()
+local function OILZY_fake_script() -- ImageButton_2.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_2)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	
+	-- GUI TOGGLE
+	local ToggleButton = script.Parent
+	
+	-- SETTINGS
+	local BASE_SPEED = 50
+	local BOOST_SPEED = 100
+	local BOOST_KEY = Enum.KeyCode.LeftShift
+	
+	-- States
+	local featureEnabled = false
+	local boosting = false
+	
+	-- Character refs
+	local humanoid
+	local root
+	
+	local function updateButton()
+		if featureEnabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function setupCharacter(char)
+		humanoid = char:WaitForChild("Humanoid")
+		root = char:WaitForChild("HumanoidRootPart")
+	
+		humanoid.AutoRotate = true
+		humanoid.PlatformStand = false
+		humanoid.WalkSpeed = 16 -- animation reference
+	end
+	
+	player.CharacterAdded:Connect(setupCharacter)
+	if player.Character then
+		setupCharacter(player.Character)
+	end
+	
+	-- GUI toggles FEATURE
+	ToggleButton.MouseButton1Click:Connect(function()
+		featureEnabled = not featureEnabled
+		boosting = false -- reset boost if turned off
+		updateButton()
+	end)
+	
+	-- Boost key
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if not featureEnabled then return end
+	
+		if input.KeyCode == BOOST_KEY then
+			boosting = true
+		end
+	end)
+	
+	UserInputService.InputEnded:Connect(function(input, gp)
+		if gp then return end
+	
+		if input.KeyCode == BOOST_KEY then
+			boosting = false
+		end
+	end)
+	
+	RunService.RenderStepped:Connect(function(dt)
+		if not featureEnabled then return end
+		if not humanoid or not root then return end
+	
+		local moveDir = humanoid.MoveDirection
+		if moveDir.Magnitude == 0 then return end
+	
+		local speed = boosting and BOOST_SPEED or BASE_SPEED
+		root.CFrame += moveDir * speed * dt
+	end)
+	
+	updateButton()
+	
+end
+coroutine.wrap(OILZY_fake_script)()
+local function JRVATS_fake_script() -- ImageButton_3.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_3)
+
+	--// Infinite Jump (CFrame WalkSpeed Toggle Style, non-spam)
+	
+	local UIS = game:GetService("UserInputService")
+	local Players = game:GetService("Players")
+	
+	local player = Players.LocalPlayer
+	
+	-- GUI (the button itself)
+	local ToggleButton = script.Parent
+	
+	-- STATE
+	local enabled = false
+	local canJumpAgain = true
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function getHumanoid()
+		local char = player.Character or player.CharacterAdded:Wait()
+		return char:WaitForChild("Humanoid")
+	end
+	
+	-- GUI toggle = permission
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		updateButton()
+	end)
+	
+	-- Space = infinite jump (once per press)
+	UIS.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if input.KeyCode ~= Enum.KeyCode.Space then return end
+		if not enabled then return end
+		if not canJumpAgain then return end
+	
+		canJumpAgain = false
+	
+		local humanoid = getHumanoid()
+		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+	end)
+	
+	UIS.InputEnded:Connect(function(input)
+		if input.KeyCode == Enum.KeyCode.Space then
+			canJumpAgain = true
+		end
+	end)
+	
+	-- Reset debounce on respawn
+	player.CharacterAdded:Connect(function()
+		canJumpAgain = true
+	end)
+	
+	-- init
+	updateButton()
+	
+end
+coroutine.wrap(JRVATS_fake_script)()
+local function RBQNUI_fake_script() -- ImageButton_4.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_4)
+
+	local TextChatService = game:GetService("TextChatService")
+	
+	local ToggleButton = script.Parent
+	
+	local enabled = false
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			TextChatService.ChatWindowConfiguration.Enabled = true
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			TextChatService.ChatWindowConfiguration.Enabled = false
+		end
+	end
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		updateButton()
+	end)
+	
+	updateButton()
+end
+coroutine.wrap(RBQNUI_fake_script)()
+local function XGSDDOG_fake_script() -- ImageButton_5.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_5)
+
+	local Players = game:GetService("Players")
+	
+	local ToggleButton = script.Parent
+	local localPlayer = Players.LocalPlayer
+	
+	local enabled = false
+	local connections = {}
+	
+	local function createTag(player, character)
+		if not enabled then return end
+		if not character then return end
+	
+		local head = character:FindFirstChild("Head")
+		if not head then return end
+	
+		-- remove old
+		local old = head:FindFirstChild("NameTag")
+		if old then old:Destroy() end
+	
+		local billboard = Instance.new("BillboardGui")
+		billboard.Name = "NameTag"
+		billboard.Size = UDim2.new(0, 200, 0, 50)
+		billboard.StudsOffset = Vector3.new(0, 2.5, 0)
+		billboard.AlwaysOnTop = true
+		billboard.Parent = head
+	
+		local label = Instance.new("TextLabel")
+		label.Size = UDim2.new(1, 0, 1, 0)
+		label.BackgroundTransparency = 1
+		label.TextScaled = true
+		label.TextStrokeTransparency = 0.5
+		label.Text = player.DisplayName .. " (@" .. player.Name .. ")"
+		label.Parent = billboard
+	end
+	
+	local function setupPlayer(player)
+		local function onCharacter(char)
+			task.wait(0.2)
+			createTag(player, char)
+		end
+	
+		table.insert(connections, player.CharacterAdded:Connect(onCharacter))
+	
+		if player.Character then
+			onCharacter(player.Character)
+		end
+	end
+	
+	local function clearTags()
+		for _, player in ipairs(Players:GetPlayers()) do
+			if player.Character then
+				local head = player.Character:FindFirstChild("Head")
+				if head then
+					local tag = head:FindFirstChild("NameTag")
+					if tag then
+						tag:Destroy()
+					end
+				end
+			end
+		end
+	end
+	
+	local function enableSystem()
+		for _, player in ipairs(Players:GetPlayers()) do
+			setupPlayer(player)
+		end
+	
+		table.insert(connections, Players.PlayerAdded:Connect(setupPlayer))
+	end
+	
+	local function disableSystem()
+		clearTags()
+	
+		for _, c in ipairs(connections) do
+			c:Disconnect()
+		end
+		table.clear(connections)
+	end
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255,0,0)
+		end
+	end
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+	
+		if enabled then
+			enableSystem()
+		else
+			disableSystem()
+		end
+	
+		updateButton()
+	end)
+	
+	updateButton()
+end
+coroutine.wrap(XGSDDOG_fake_script)()
+local function SFEUIW_fake_script() -- ImageButton_6.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_6)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local UserInputService = game:GetService("UserInputService")
+	
+	local player = Players.LocalPlayer
+	local ToggleButton = script.Parent
+	
+	local NOCLIP_KEY = Enum.KeyCode.N
+	
+	local enabled = false
+	local noclip = false
+	
+	local character
+	local connections = {}
+	local originalCollision = {}
+	
+	local function disconnectCharacterConnections()
+		for _, conn in ipairs(connections) do
+			if conn then
+				conn:Disconnect()
+			end
+		end
+		table.clear(connections)
+	end
+	
+	local function cacheCollisionStates()
+		table.clear(originalCollision)
+	
+		if not character then return end
+		for _, obj in ipairs(character:GetDescendants()) do
+			if obj:IsA("BasePart") then
+				originalCollision[obj] = obj.CanCollide
+			end
+		end
+	end
+	
+	local function setNoclipState(state)
+		if not character then return end
+	
+		for _, obj in ipairs(character:GetDescendants()) do
+			if obj:IsA("BasePart") then
+				if state then
+					obj.CanCollide = false
+				else
+					if originalCollision[obj] ~= nil then
+						obj.CanCollide = originalCollision[obj]
+					end
+				end
+			end
+		end
+	end
+	
+	local function updateButton()
+		ToggleButton.BackgroundColor3 = enabled
+			and Color3.fromRGB(0, 255, 0)
+			or Color3.fromRGB(255, 0, 0)
+	end
+	
+	local function onDescendantAdded(obj)
+		if obj:IsA("BasePart") then
+			originalCollision[obj] = obj.CanCollide
+	
+			if enabled and noclip then
+				obj.CanCollide = false
+			end
+		end
+	end
+	
+	local function onCharacterAdded(char)
+		disconnectCharacterConnections()
+	
+		character = char
+		noclip = false
+	
+		cacheCollisionStates()
+	
+		table.insert(connections, character.DescendantAdded:Connect(onDescendantAdded))
+	end
+	
+	player.CharacterAdded:Connect(onCharacterAdded)
+	
+	if player.Character then
+		onCharacterAdded(player.Character)
+	end
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+	
+		if not enabled then
+			noclip = false
+			setNoclipState(false)
+		end
+	
+		updateButton()
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if input.KeyCode ~= NOCLIP_KEY then return end
+		if not enabled then return end
+	
+		noclip = not noclip
+		setNoclipState(noclip)
+	end)
+	
+	RunService.Stepped:Connect(function()
+		if enabled and noclip and character then
+			for _, obj in ipairs(character:GetDescendants()) do
+				if obj:IsA("BasePart") then
+					obj.CanCollide = false
+				end
+			end
+		end
+	end)
+	
+	updateButton()
+end
+coroutine.wrap(SFEUIW_fake_script)()
+local function HBPBR_fake_script() -- Bank.LocalScript 
+	local script = Instance.new('LocalScript', Bank)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-448, 23, -283)
+	end)
+end
+coroutine.wrap(HBPBR_fake_script)()
+local function FFKTLYS_fake_script() -- Casino.LocalScript 
+	local script = Instance.new('LocalScript', Casino)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-870, 21, -148)
+	end)
+end
+coroutine.wrap(FFKTLYS_fake_script)()
+local function XVFBKP_fake_script() -- BasketballCourt.LocalScript 
+	local script = Instance.new('LocalScript', BasketballCourt)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-932, 21, -481)
+	end)
+end
+coroutine.wrap(XVFBKP_fake_script)()
+local function OQFA_fake_script() -- FoodCourt1.LocalScript 
+	local script = Instance.new('LocalScript', FoodCourt1)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-299, 49, -623)
+	end)
+end
+coroutine.wrap(OQFA_fake_script)()
+local function YUVQ_fake_script() -- FoodCourt2.LocalScript 
+	local script = Instance.new('LocalScript', FoodCourt2)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-327, 23, 297)
+	end)
+end
+coroutine.wrap(YUVQ_fake_script)()
+local function JGBF_fake_script() -- GunShop1.LocalScript 
+	local script = Instance.new('LocalScript', GunShop1)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(483, 48, -621)
+	end)
+end
+coroutine.wrap(JGBF_fake_script)()
+local function ABHYFGN_fake_script() -- GunShop2.LocalScript 
+	local script = Instance.new('LocalScript', GunShop2)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-580, 8, -735)
+	end)
+end
+coroutine.wrap(ABHYFGN_fake_script)()
+local function RELBCV_fake_script() -- PlayGround.LocalScript 
+	local script = Instance.new('LocalScript', PlayGround)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-268, 22, -754)
+	end)
+end
+coroutine.wrap(RELBCV_fake_script)()
+local function HEQGF_fake_script() -- GasStation.LocalScript 
+	local script = Instance.new('LocalScript', GasStation)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(532, 47, -249)
+	end)
+end
+coroutine.wrap(HEQGF_fake_script)()
+local function FXEFHP_fake_script() -- HighSchool.LocalScript 
+	local script = Instance.new('LocalScript', HighSchool)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-586, 21, 336)
+	end)
+end
+coroutine.wrap(FXEFHP_fake_script)()
+local function OJVWWB_fake_script() -- PoliceStation.LocalScript 
+	local script = Instance.new('LocalScript', PoliceStation)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local hrp = character:WaitForChild("HumanoidRootPart")
+	
+		hrp.CFrame = CFrame.new(-264, 21, -73)
+	end)
+end
+coroutine.wrap(OJVWWB_fake_script)()
+local function TDEJ_fake_script() -- ImageButton_7.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_7)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local camera = workspace.CurrentCamera
+	
+	local ToggleButton = script.Parent
+	
+	local TOGGLE_KEY = Enum.KeyCode.T
+	local MAX_DISTANCE = 400            -- studs
+	local LOCK_RADIUS = 300             -- pixels from crosshair
+	local SMOOTHNESS = 28               -- higher = tighter lock
+	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
+	-- ====================
+	
+	local enabled = false
+	
+	local lockedChar = nil
+	local lockedPart = nil
+	local aimPos = nil
+	local locked = false
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function clearLock()
+		locked = false
+		lockedPart = nil
+		lockedChar = nil
+		aimPos = nil
+	end
+	
+	-- ===== Your original utilities (unchanged) =====
+	local function getTorso(char)
+		return char:FindFirstChild("UpperTorso")
+			or char:FindFirstChild("Torso")
+			or char:FindFirstChild("HumanoidRootPart")
+	end
+	
+	local function alive(char)
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		return hum and hum.Health > 0
+	end
+	
+	local function screenDistance(worldPos)
+		local v, onScreen = camera:WorldToViewportPoint(worldPos)
+		if not onScreen then return math.huge end
+		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+		return (Vector2.new(v.X, v.Y) - center).Magnitude
+	end
+	
+	local function findTarget()
+		local myChar = player.Character
+		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
+		if not myRoot then return end
+	
+		local best, bestScore
+	
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character and alive(plr.Character) then
+				local part = getTorso(plr.Character)
+				if part then
+					local dist = (part.Position - myRoot.Position).Magnitude
+					if dist <= MAX_DISTANCE then
+						local sDist = screenDistance(part.Position)
+						if sDist <= LOCK_RADIUS then
+							local score = sDist + dist * 0.04
+							if not bestScore or score < bestScore then
+								bestScore = score
+								best = part
+							end
+						end
+					end
+				end
+			end
+		end
+	
+		return best
+	end
+	-- ==============================================
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		if not enabled then
+			clearLock() -- if you turn it OFF, it stops locking immediately
+		end
+		updateButton()
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if input.KeyCode ~= TOGGLE_KEY then return end
+		if not enabled then return end
+	
+		if locked then
+			clearLock()
+		else
+			local part = findTarget()
+			if part then
+				locked = true
+				lockedPart = part
+				lockedChar = part.Parent
+				aimPos = part.Position
+			end
+		end
+	end)
+	
+	RunService.RenderStepped:Connect(function(dt)
+		if not enabled then return end
+		if not locked then return end
+	
+		if not lockedChar or not alive(lockedChar) then
+			clearLock()
+			return
+		end
+	
+		lockedPart = getTorso(lockedChar)
+		if not lockedPart then
+			clearLock()
+			return
+		end
+	
+		local vel = lockedPart.AssemblyLinearVelocity
+		local predicted = lockedPart.Position + vel * PREDICTION
+	
+		aimPos = aimPos or predicted
+		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
+		aimPos = aimPos:Lerp(predicted, alpha)
+	
+		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
+	end)
+	
+	-- Optional: clear lock on respawn
+	player.CharacterAdded:Connect(function()
+		clearLock()
+	end)
+	
+	updateButton()
+	
+end
+coroutine.wrap(TDEJ_fake_script)()
+local function IIDEU_fake_script() -- ImageButton_8.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_8)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local camera = workspace.CurrentCamera
+	
+	local ToggleButton = script.Parent
+	
+	local TOGGLE_KEY = Enum.KeyCode.T
+	local MAX_DISTANCE = 400            -- studs
+	local LOCK_RADIUS = 300             -- pixels from crosshair
+	local SMOOTHNESS = 28               -- higher = tighter lock
+	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
+	-- ====================
+	
+	local enabled = false
+	
+	local lockedChar = nil
+	local lockedPart = nil
+	local aimPos = nil
+	local locked = false
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function clearLock()
+		locked = false
+		lockedPart = nil
+		lockedChar = nil
+		aimPos = nil
+	end
+	
+	-- ===== Your original utilities (unchanged) =====
+	local function getTorso(char)
+		return char:FindFirstChild("UpperTorso")
+			or char:FindFirstChild("Torso")
+			or char:FindFirstChild("HumanoidRootPart")
+	end
+	
+	local function alive(char)
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		return hum and hum.Health > 0
+	end
+	
+	local function screenDistance(worldPos)
+		local v, onScreen = camera:WorldToViewportPoint(worldPos)
+		if not onScreen then return math.huge end
+		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+		return (Vector2.new(v.X, v.Y) - center).Magnitude
+	end
+	
+	local function findTarget()
+		local myChar = player.Character
+		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
+		if not myRoot then return end
+	
+		local best, bestScore
+	
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character and alive(plr.Character) then
+				local part = getTorso(plr.Character)
+				if part then
+					local dist = (part.Position - myRoot.Position).Magnitude
+					if dist <= MAX_DISTANCE then
+						local sDist = screenDistance(part.Position)
+						if sDist <= LOCK_RADIUS then
+							local score = sDist + dist * 0.04
+							if not bestScore or score < bestScore then
+								bestScore = score
+								best = part
+							end
+						end
+					end
+				end
+			end
+		end
+	
+		return best
+	end
+	-- ==============================================
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		if not enabled then
+			clearLock() -- if you turn it OFF, it stops locking immediately
+		end
+		updateButton()
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if input.KeyCode ~= TOGGLE_KEY then return end
+		if not enabled then return end
+	
+		if locked then
+			clearLock()
+		else
+			local part = findTarget()
+			if part then
+				locked = true
+				lockedPart = part
+				lockedChar = part.Parent
+				aimPos = part.Position
+			end
+		end
+	end)
+	
+	RunService.RenderStepped:Connect(function(dt)
+		if not enabled then return end
+		if not locked then return end
+	
+		if not lockedChar or not alive(lockedChar) then
+			clearLock()
+			return
+		end
+	
+		lockedPart = getTorso(lockedChar)
+		if not lockedPart then
+			clearLock()
+			return
+		end
+	
+		local vel = lockedPart.AssemblyLinearVelocity
+		local predicted = lockedPart.Position + vel * PREDICTION
+	
+		aimPos = aimPos or predicted
+		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
+		aimPos = aimPos:Lerp(predicted, alpha)
+	
+		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
+	end)
+	
+	-- Optional: clear lock on respawn
+	player.CharacterAdded:Connect(function()
+		clearLock()
+	end)
+	
+	updateButton()
+	
+end
+coroutine.wrap(IIDEU_fake_script)()
+local function XGPH_fake_script() -- ImageButton_9.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_9)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local camera = workspace.CurrentCamera
+	
+	local ToggleButton = script.Parent
+	
+	local TOGGLE_KEY = Enum.KeyCode.T
+	local MAX_DISTANCE = 400            -- studs
+	local LOCK_RADIUS = 300             -- pixels from crosshair
+	local SMOOTHNESS = 28               -- higher = tighter lock
+	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
+	-- ====================
+	
+	local enabled = false
+	
+	local lockedChar = nil
+	local lockedPart = nil
+	local aimPos = nil
+	local locked = false
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function clearLock()
+		locked = false
+		lockedPart = nil
+		lockedChar = nil
+		aimPos = nil
+	end
+	
+	-- ===== Your original utilities (unchanged) =====
+	local function getTorso(char)
+		return char:FindFirstChild("UpperTorso")
+			or char:FindFirstChild("Torso")
+			or char:FindFirstChild("HumanoidRootPart")
+	end
+	
+	local function alive(char)
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		return hum and hum.Health > 0
+	end
+	
+	local function screenDistance(worldPos)
+		local v, onScreen = camera:WorldToViewportPoint(worldPos)
+		if not onScreen then return math.huge end
+		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+		return (Vector2.new(v.X, v.Y) - center).Magnitude
+	end
+	
+	local function findTarget()
+		local myChar = player.Character
+		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
+		if not myRoot then return end
+	
+		local best, bestScore
+	
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character and alive(plr.Character) then
+				local part = getTorso(plr.Character)
+				if part then
+					local dist = (part.Position - myRoot.Position).Magnitude
+					if dist <= MAX_DISTANCE then
+						local sDist = screenDistance(part.Position)
+						if sDist <= LOCK_RADIUS then
+							local score = sDist + dist * 0.04
+							if not bestScore or score < bestScore then
+								bestScore = score
+								best = part
+							end
+						end
+					end
+				end
+			end
+		end
+	
+		return best
+	end
+	-- ==============================================
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		if not enabled then
+			clearLock() -- if you turn it OFF, it stops locking immediately
+		end
+		updateButton()
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if input.KeyCode ~= TOGGLE_KEY then return end
+		if not enabled then return end
+	
+		if locked then
+			clearLock()
+		else
+			local part = findTarget()
+			if part then
+				locked = true
+				lockedPart = part
+				lockedChar = part.Parent
+				aimPos = part.Position
+			end
+		end
+	end)
+	
+	RunService.RenderStepped:Connect(function(dt)
+		if not enabled then return end
+		if not locked then return end
+	
+		if not lockedChar or not alive(lockedChar) then
+			clearLock()
+			return
+		end
+	
+		lockedPart = getTorso(lockedChar)
+		if not lockedPart then
+			clearLock()
+			return
+		end
+	
+		local vel = lockedPart.AssemblyLinearVelocity
+		local predicted = lockedPart.Position + vel * PREDICTION
+	
+		aimPos = aimPos or predicted
+		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
+		aimPos = aimPos:Lerp(predicted, alpha)
+	
+		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
+	end)
+	
+	-- Optional: clear lock on respawn
+	player.CharacterAdded:Connect(function()
+		clearLock()
+	end)
+	
+	updateButton()
+	
+end
+coroutine.wrap(XGPH_fake_script)()
+local function AHMQY_fake_script() -- ImageButton_10.LocalScript 
+	local script = Instance.new('LocalScript', ImageButton_10)
+
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
+	
+	local player = Players.LocalPlayer
+	local camera = workspace.CurrentCamera
+	
+	local ToggleButton = script.Parent
+	
+	local TOGGLE_KEY = Enum.KeyCode.T
+	local MAX_DISTANCE = 400            -- studs
+	local LOCK_RADIUS = 300             -- pixels from crosshair
+	local SMOOTHNESS = 28               -- higher = tighter lock
+	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
+	-- ====================
+	
+	local enabled = false
+	
+	local lockedChar = nil
+	local lockedPart = nil
+	local aimPos = nil
+	local locked = false
+	
+	local function updateButton()
+		if enabled then
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		else
+			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end
+	
+	local function clearLock()
+		locked = false
+		lockedPart = nil
+		lockedChar = nil
+		aimPos = nil
+	end
+	
+	-- ===== Your original utilities (unchanged) =====
+	local function getTorso(char)
+		return char:FindFirstChild("UpperTorso")
+			or char:FindFirstChild("Torso")
+			or char:FindFirstChild("HumanoidRootPart")
+	end
+	
+	local function alive(char)
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		return hum and hum.Health > 0
+	end
+	
+	local function screenDistance(worldPos)
+		local v, onScreen = camera:WorldToViewportPoint(worldPos)
+		if not onScreen then return math.huge end
+		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+		return (Vector2.new(v.X, v.Y) - center).Magnitude
+	end
+	
+	local function findTarget()
+		local myChar = player.Character
+		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
+		if not myRoot then return end
+	
+		local best, bestScore
+	
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= player and plr.Character and alive(plr.Character) then
+				local part = getTorso(plr.Character)
+				if part then
+					local dist = (part.Position - myRoot.Position).Magnitude
+					if dist <= MAX_DISTANCE then
+						local sDist = screenDistance(part.Position)
+						if sDist <= LOCK_RADIUS then
+							local score = sDist + dist * 0.04
+							if not bestScore or score < bestScore then
+								bestScore = score
+								best = part
+							end
+						end
+					end
+				end
+			end
+		end
+	
+		return best
+	end
+	-- ==============================================
+	
+	ToggleButton.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		if not enabled then
+			clearLock() -- if you turn it OFF, it stops locking immediately
+		end
+		updateButton()
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gp)
+		if gp then return end
+		if input.KeyCode ~= TOGGLE_KEY then return end
+		if not enabled then return end
+	
+		if locked then
+			clearLock()
+		else
+			local part = findTarget()
+			if part then
+				locked = true
+				lockedPart = part
+				lockedChar = part.Parent
+				aimPos = part.Position
+			end
+		end
+	end)
+	
+	RunService.RenderStepped:Connect(function(dt)
+		if not enabled then return end
+		if not locked then return end
+	
+		if not lockedChar or not alive(lockedChar) then
+			clearLock()
+			return
+		end
+	
+		lockedPart = getTorso(lockedChar)
+		if not lockedPart then
+			clearLock()
+			return
+		end
+	
+		local vel = lockedPart.AssemblyLinearVelocity
+		local predicted = lockedPart.Position + vel * PREDICTION
+	
+		aimPos = aimPos or predicted
+		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
+		aimPos = aimPos:Lerp(predicted, alpha)
+	
+		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
+	end)
+	
+	-- Optional: clear lock on respawn
+	player.CharacterAdded:Connect(function()
+		clearLock()
+	end)
+	
+	updateButton()
+	
+end
+coroutine.wrap(AHMQY_fake_script)()
+local function NNGIUBW_fake_script() -- TargetFrame.LocalScript 
+	local script = Instance.new('LocalScript', TargetFrame)
+
+	-- LocalScript inside TargetFrame
+	local targetFrame = script.Parent
+	local frame = targetFrame:WaitForChild("Frame")
+	local textBox = frame:WaitForChild("TextBox")
+	local imageLabel = frame:WaitForChild("ImageLabel")
+	
+	local flingBtn = targetFrame:WaitForChild("Fling"):WaitForChild("ImageButton")
+	local teleportBtn = targetFrame:WaitForChild("Teleport"):WaitForChild("ImageButton")
+	local viewBtn = targetFrame:WaitForChild("View"):WaitForChild("ImageButton")
+	local headsitBtn = targetFrame:WaitForChild("HeadSit"):WaitForChild("ImageButton")
+	
+	local Players = game:GetService("Players")
+	local LocalPlayer = Players.LocalPlayer
+	local weld
+	local selectedTarget = nil
+	local isViewing = false
+	
+	-- Find target from server
+	local function findTarget(input)
+		for _, v in pairs(Players:GetPlayers()) do
+			if v ~= LocalPlayer and v.Name:lower():find(input:lower()) then
+				return v
+			end
+		end
+		return nil
+	end
+	
+	-- Update PFP from in-game player
+	local function updatePFP(player)
+		if player then
+			imageLabel.Image = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. player.UserId .. "&width=150&height=150&format=png"
+			selectedTarget = player
+		else
+			imageLabel.Image = ""
+			selectedTarget = nil
+		end
+	end
+	
+	-- Auto-show first server player on open
+	task.spawn(function()
+		task.wait(1)
+		local list = {}
+		for _, v in pairs(Players:GetPlayers()) do
+			if v ~= LocalPlayer then table.insert(list, v) end
+		end
+		if #list > 0 then
+			textBox.Text = list[1].Name
+			updatePFP(list[1])
+		end
+	end)
+	
+	-- Update target as you type
+	textBox:GetPropertyChangedSignal("Text"):Connect(function()
+		updatePFP(findTarget(textBox.Text))
+	end)
+	
+	-- New player joins
+	Players.PlayerAdded:Connect(function(p)
+		if textBox.Text == "" then
+			textBox.Text = p.Name
+			updatePFP(p)
+		end
+	end)
+	
+	-- FLING
+	local function strongFling(target)
+		if not target or not target.Character then return end
+		local char = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+		local hrp = char:WaitForChild("HumanoidRootPart")
+		local tHRP = target.Character:FindFirstChild("HumanoidRootPart")
+		if not tHRP then return end
+		local oldCF = hrp.CFrame
+		for i = 1, 150 do
+			hrp.CFrame = tHRP.CFrame * CFrame.Angles(0, math.rad(i * 50), 0) * CFrame.new(0, 0, 3)
+			hrp.Velocity = Vector3.new(10000, 10000, 10000)
+			hrp.RotVelocity = Vector3.new(10000, 10000, 10000)
+			task.wait()
+		end
+		hrp.CFrame = oldCF
+	end
+	
+	-- TELEPORT
+	local function teleportToTarget(target)
+		if not target or not target.Character then return end
+		local myChar = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+		local myHRP = myChar:WaitForChild("HumanoidRootPart")
+		myHRP.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
+		target.CharacterAdded:Connect(function()
+			task.wait(0.5)
+			local newHRP = target.Character:WaitForChild("HumanoidRootPart")
+			myHRP.CFrame = newHRP.CFrame + Vector3.new(0, 3, 0)
+		end)
+	end
+	
+	-- VIEW (toggle)
+	local function viewPlayer(target)
+		local cam = workspace.CurrentCamera
+		if isViewing then
+			cam.CameraType = Enum.CameraType.Custom
+			local myChar = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+			cam.CameraSubject = myChar:WaitForChild("Humanoid")
+			isViewing = false
+		else
+			if not target or not target.Character then return end
+			cam.CameraType = Enum.CameraType.Watch
+			cam.CameraSubject = target.Character:WaitForChild("Humanoid")
+			isViewing = true
+			target.CharacterAdded:Connect(function(char)
+				if isViewing then
+					task.wait(0.5)
+					cam.CameraSubject = char:WaitForChild("Humanoid")
+				end
+			end)
+		end
+	end
+	
+	-- HEADSIT
+	local function detach()
+		if weld then weld:Destroy() weld = nil end
+	end
+	
+	local function headSit(target)
+		if not target or not target.Character then return end
+		local targetHead = target.Character:FindFirstChild("Head")
+		local myChar = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+		local myHRP = myChar:WaitForChild("HumanoidRootPart")
+		local humanoid = myChar:WaitForChild("Humanoid")
+		if not targetHead then return end
+		humanoid.Sit = true
+		myHRP.CFrame = targetHead.CFrame * CFrame.new(0, 1.5, 0)
+		weld = Instance.new("WeldConstraint")
+		weld.Part0 = myHRP
+		weld.Part1 = targetHead
+		weld.Parent = myHRP
+		humanoid:GetPropertyChangedSignal("Jump"):Connect(function()
+			if humanoid.Jump then detach() end
+		end)
+	end
+	
+	-- Button connections
+	flingBtn.MouseButton1Click:Connect(function()
+		strongFling(selectedTarget)
+	end)
+	
+	teleportBtn.MouseButton1Click:Connect(function()
+		teleportToTarget(selectedTarget)
+	end)
+	
+	viewBtn.MouseButton1Click:Connect(function()
+		viewPlayer(selectedTarget)
+	end)
+	
+	headsitBtn.MouseButton1Click:Connect(function()
+		headSit(selectedTarget)
+	end)
+end
+coroutine.wrap(NNGIUBW_fake_script)()
+local function PBKAK_fake_script() -- BobDaHood.DragUI 
+	local script = Instance.new('LocalScript', BobDaHood)
+
+	local gui = script.Parent
+	local Frame = gui:WaitForChild("Frame")
+	local topbar = Frame:WaitForChild("TopBar")
+	
+	local UIS = game:GetService("UserInputService")
+	
+	local dragging = false
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		Frame.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
+	
+	topbar.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1
+			or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = Frame.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if dragging and (
+			input.UserInputType == Enum.UserInputType.MouseMovement
+				or input.UserInputType == Enum.UserInputType.Touch
+			) then
+			update(input)
+		end
+	end)
+	
+	
+end
+coroutine.wrap(PBKAK_fake_script)()
+local function UNSLYKS_fake_script() -- BobDaHood.ButtonLS 
+	local script = Instance.new('LocalScript', BobDaHood)
+
+	local BobDaHood = script.Parent
+	local Frame = BobDaHood:WaitForChild("Frame")
+	
+	local MainButton = Frame:WaitForChild("MainButton")
+	local MainFrame = MainButton:WaitForChild("MainFrame")
+	
+	local AboutButton = Frame:WaitForChild("AboutButton")
+	local AboutFrame = AboutButton:WaitForChild("AboutFrame")
+	
+	
+	local TeleportButton = Frame:WaitForChild("TeleportButton")
+	local TeleportFrame = TeleportButton:WaitForChild("TeleportFrame")
+	
+	local TargetButton = Frame:WaitForChild("TargetButton")
+	local TargetFrame = TargetButton:WaitForChild("TargetFrame")
+	
+	MainButton.MouseButton1Click:Connect(function()
+		TeleportFrame.Visible = false
+		TargetFrame.Visible = false
+		AboutFrame.Visible = false
+		MainFrame.Visible = true
+	end)
+	
+	TeleportButton.MouseButton1Click:Connect(function()
+		TeleportFrame.Visible = true
+		TargetFrame.Visible = false
+		AboutFrame.Visible = false
+		MainFrame.Visible = false
+	end)
+	
+	TargetButton.MouseButton1Click:Connect(function()
+		TeleportFrame.Visible = false
+		TargetFrame.Visible = true
+		AboutFrame.Visible = false
+		MainFrame.Visible = false
+	end)
+	
+	AboutButton.MouseButton1Click:Connect(function()
+		TeleportFrame.Visible = false
+		TargetFrame.Visible = false
+		MainFrame.Visible = false
+		AboutFrame.Visible = true
+	end)
+end
+coroutine.wrap(UNSLYKS_fake_script)()
+local function JLTGPD_fake_script() -- BobDaHood.ToggleGui 
+	local script = Instance.new('LocalScript', BobDaHood)
+
+	local UserInputService = game:GetService("UserInputService")
+	local BobDaHood = script.Parent
+	
+	local function toggleBobDaHood()
+		BobDaHood.Enabled = not BobDaHood.Enabled
+	end
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if input.KeyCode ~= Enum.KeyCode.V then return end
+	
+		toggleBobDaHood()
+	end)
+end
+coroutine.wrap(JLTGPD_fake_script)()
