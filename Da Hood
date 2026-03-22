@@ -125,17 +125,6 @@ BobDaHood.ResetOnSpawn = true
 BobDaHood.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 BobDaHood.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local UserInputService = game:GetService("UserInputService")
-local player = game.Players.LocalPlayer
-local gui = player:WaitForChild("PlayerGui"):WaitForChild("BobDaHood")
-
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-	if gameProcessed then return end
-	if input.KeyCode == Enum.KeyCode.V then
-		gui.Enabled = not gui.Enabled
-	end
-end)
-
 Frame.Parent = BobDaHood
 Frame.BackgroundColor3 = Color3.fromRGB(48, 21, 88)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1006,32 +995,32 @@ TextLabel_16.TextWrapped = true
 
 -- Scripts:
 
-local function JNRVLX_fake_script() -- ImageButton.LocalScript 
+local function UTOVKT_fake_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
-	
+
 	local player = Players.LocalPlayer
 	local camera = workspace.CurrentCamera
-	
+
 	local ToggleButton = script.Parent
-	
+
 	local TOGGLE_KEY = Enum.KeyCode.T
 	local MAX_DISTANCE = 400            -- studs
 	local LOCK_RADIUS = 300             -- pixels from crosshair
 	local SMOOTHNESS = 28               -- higher = tighter lock
 	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
 	-- ====================
-	
+
 	local enabled = false
-	
+
 	local lockedChar = nil
 	local lockedPart = nil
 	local aimPos = nil
 	local locked = false
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -1039,40 +1028,40 @@ local function JNRVLX_fake_script() -- ImageButton.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function clearLock()
 		locked = false
 		lockedPart = nil
 		lockedChar = nil
 		aimPos = nil
 	end
-	
+
 	-- ===== Your original utilities (unchanged) =====
 	local function getTorso(char)
 		return char:FindFirstChild("UpperTorso")
 			or char:FindFirstChild("Torso")
 			or char:FindFirstChild("HumanoidRootPart")
 	end
-	
+
 	local function alive(char)
 		local hum = char:FindFirstChildOfClass("Humanoid")
 		return hum and hum.Health > 0
 	end
-	
+
 	local function screenDistance(worldPos)
 		local v, onScreen = camera:WorldToViewportPoint(worldPos)
 		if not onScreen then return math.huge end
 		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
 		return (Vector2.new(v.X, v.Y) - center).Magnitude
 	end
-	
+
 	local function findTarget()
 		local myChar = player.Character
 		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
 		if not myRoot then return end
-	
+
 		local best, bestScore
-	
+
 		for _, plr in ipairs(Players:GetPlayers()) do
 			if plr ~= player and plr.Character and alive(plr.Character) then
 				local part = getTorso(plr.Character)
@@ -1091,11 +1080,11 @@ local function JNRVLX_fake_script() -- ImageButton.LocalScript
 				end
 			end
 		end
-	
+
 		return best
 	end
 	-- ==============================================
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		if not enabled then
@@ -1103,12 +1092,12 @@ local function JNRVLX_fake_script() -- ImageButton.LocalScript
 		end
 		updateButton()
 	end)
-	
+
 	UserInputService.InputBegan:Connect(function(input, gp)
 		if gp then return end
 		if input.KeyCode ~= TOGGLE_KEY then return end
 		if not enabled then return end
-	
+
 		if locked then
 			clearLock()
 		else
@@ -1121,66 +1110,66 @@ local function JNRVLX_fake_script() -- ImageButton.LocalScript
 			end
 		end
 	end)
-	
+
 	RunService.RenderStepped:Connect(function(dt)
 		if not enabled then return end
 		if not locked then return end
-	
+
 		if not lockedChar or not alive(lockedChar) then
 			clearLock()
 			return
 		end
-	
+
 		lockedPart = getTorso(lockedChar)
 		if not lockedPart then
 			clearLock()
 			return
 		end
-	
+
 		local vel = lockedPart.AssemblyLinearVelocity
 		local predicted = lockedPart.Position + vel * PREDICTION
-	
+
 		aimPos = aimPos or predicted
 		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
 		aimPos = aimPos:Lerp(predicted, alpha)
-	
+
 		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
 	end)
-	
+
 	-- Optional: clear lock on respawn
 	player.CharacterAdded:Connect(function()
 		clearLock()
 	end)
-	
+
 	updateButton()
-	
+
 end
-coroutine.wrap(JNRVLX_fake_script)()
-local function LNDTA_fake_script() -- ImageButton_2.LocalScript 
+coroutine.wrap(UTOVKT_fake_script)()
+local function BCLE_fake_script() -- ImageButton_2.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_2)
 
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
-	
+
 	local player = Players.LocalPlayer
-	
+
 	-- GUI TOGGLE
 	local ToggleButton = script.Parent
-	
+
 	-- SETTINGS
 	local BASE_SPEED = 50
 	local BOOST_SPEED = 100
 	local BOOST_KEY = Enum.KeyCode.LeftShift
-	
+
 	-- States
 	local featureEnabled = false
 	local boosting = false
-	
+
 	-- Character refs
 	local humanoid
 	local root
-	
+
 	local function updateButton()
 		if featureEnabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -1188,78 +1177,78 @@ local function LNDTA_fake_script() -- ImageButton_2.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function setupCharacter(char)
 		humanoid = char:WaitForChild("Humanoid")
 		root = char:WaitForChild("HumanoidRootPart")
-	
+
 		humanoid.AutoRotate = true
 		humanoid.PlatformStand = false
 		humanoid.WalkSpeed = 16 -- animation reference
 	end
-	
+
 	player.CharacterAdded:Connect(setupCharacter)
 	if player.Character then
 		setupCharacter(player.Character)
 	end
-	
+
 	-- GUI toggles FEATURE
 	ToggleButton.MouseButton1Click:Connect(function()
 		featureEnabled = not featureEnabled
 		boosting = false -- reset boost if turned off
 		updateButton()
 	end)
-	
+
 	-- Boost key
 	UserInputService.InputBegan:Connect(function(input, gp)
 		if gp then return end
 		if not featureEnabled then return end
-	
+
 		if input.KeyCode == BOOST_KEY then
 			boosting = true
 		end
 	end)
-	
+
 	UserInputService.InputEnded:Connect(function(input, gp)
 		if gp then return end
-	
+
 		if input.KeyCode == BOOST_KEY then
 			boosting = false
 		end
 	end)
-	
+
 	RunService.RenderStepped:Connect(function(dt)
 		if not featureEnabled then return end
 		if not humanoid or not root then return end
-	
+
 		local moveDir = humanoid.MoveDirection
 		if moveDir.Magnitude == 0 then return end
-	
+
 		local speed = boosting and BOOST_SPEED or BASE_SPEED
 		root.CFrame += moveDir * speed * dt
 	end)
-	
+
 	updateButton()
-	
+
 end
-coroutine.wrap(LNDTA_fake_script)()
-local function JVLL_fake_script() -- ImageButton_3.LocalScript 
+coroutine.wrap(BCLE_fake_script)()
+local function KVKQH_fake_script() -- ImageButton_3.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_3)
 
 	--// Infinite Jump (CFrame WalkSpeed Toggle Style, non-spam)
-	
+
 	local UIS = game:GetService("UserInputService")
 	local Players = game:GetService("Players")
-	
+
 	local player = Players.LocalPlayer
-	
+
 	-- GUI (the button itself)
 	local ToggleButton = script.Parent
-	
+
 	-- STATE
 	local enabled = false
 	local canJumpAgain = true
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -1267,56 +1256,56 @@ local function JVLL_fake_script() -- ImageButton_3.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function getHumanoid()
 		local char = player.Character or player.CharacterAdded:Wait()
 		return char:WaitForChild("Humanoid")
 	end
-	
+
 	-- GUI toggle = permission
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		updateButton()
 	end)
-	
+
 	-- Space = infinite jump (once per press)
 	UIS.InputBegan:Connect(function(input, gameProcessed)
 		if gameProcessed then return end
 		if input.KeyCode ~= Enum.KeyCode.Space then return end
 		if not enabled then return end
 		if not canJumpAgain then return end
-	
+
 		canJumpAgain = false
-	
+
 		local humanoid = getHumanoid()
 		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
 	end)
-	
+
 	UIS.InputEnded:Connect(function(input)
 		if input.KeyCode == Enum.KeyCode.Space then
 			canJumpAgain = true
 		end
 	end)
-	
+
 	-- Reset debounce on respawn
 	player.CharacterAdded:Connect(function()
 		canJumpAgain = true
 	end)
-	
+
 	-- init
 	updateButton()
-	
+
 end
-coroutine.wrap(JVLL_fake_script)()
-local function BUHBB_fake_script() -- ImageButton_4.LocalScript 
+coroutine.wrap(KVKQH_fake_script)()
+local function IVHVX_fake_script() -- ImageButton_4.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_4)
 
 	local TextChatService = game:GetService("TextChatService")
-	
+
 	local ToggleButton = script.Parent
-	
+
 	local enabled = false
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -1326,44 +1315,44 @@ local function BUHBB_fake_script() -- ImageButton_4.LocalScript
 			TextChatService.ChatWindowConfiguration.Enabled = false
 		end
 	end
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		updateButton()
 	end)
-	
+
 	updateButton()
 end
-coroutine.wrap(BUHBB_fake_script)()
-local function XFTQEMH_fake_script() -- ImageButton_5.LocalScript 
+coroutine.wrap(IVHVX_fake_script)()
+local function VXRQ_fake_script() -- ImageButton_5.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_5)
 
 	local Players = game:GetService("Players")
-	
+
 	local ToggleButton = script.Parent
 	local localPlayer = Players.LocalPlayer
-	
+
 	local enabled = false
 	local connections = {}
-	
+
 	local function createTag(player, character)
 		if not enabled then return end
 		if not character then return end
-	
+
 		local head = character:FindFirstChild("Head")
 		if not head then return end
-	
+
 		-- remove old
 		local old = head:FindFirstChild("NameTag")
 		if old then old:Destroy() end
-	
+
 		local billboard = Instance.new("BillboardGui")
 		billboard.Name = "NameTag"
 		billboard.Size = UDim2.new(0, 200, 0, 50)
 		billboard.StudsOffset = Vector3.new(0, 2.5, 0)
 		billboard.AlwaysOnTop = true
 		billboard.Parent = head
-	
+
 		local label = Instance.new("TextLabel")
 		label.Size = UDim2.new(1, 0, 1, 0)
 		label.BackgroundTransparency = 1
@@ -1372,20 +1361,20 @@ local function XFTQEMH_fake_script() -- ImageButton_5.LocalScript
 		label.Text = player.DisplayName .. " (@" .. player.Name .. ")"
 		label.Parent = billboard
 	end
-	
+
 	local function setupPlayer(player)
 		local function onCharacter(char)
 			task.wait(0.2)
 			createTag(player, char)
 		end
-	
+
 		table.insert(connections, player.CharacterAdded:Connect(onCharacter))
-	
+
 		if player.Character then
 			onCharacter(player.Character)
 		end
 	end
-	
+
 	local function clearTags()
 		for _, player in ipairs(Players:GetPlayers()) do
 			if player.Character then
@@ -1399,24 +1388,24 @@ local function XFTQEMH_fake_script() -- ImageButton_5.LocalScript
 			end
 		end
 	end
-	
+
 	local function enableSystem()
 		for _, player in ipairs(Players:GetPlayers()) do
 			setupPlayer(player)
 		end
-	
+
 		table.insert(connections, Players.PlayerAdded:Connect(setupPlayer))
 	end
-	
+
 	local function disableSystem()
 		clearTags()
-	
+
 		for _, c in ipairs(connections) do
 			c:Disconnect()
 		end
 		table.clear(connections)
 	end
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
@@ -1424,41 +1413,41 @@ local function XFTQEMH_fake_script() -- ImageButton_5.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255,0,0)
 		end
 	end
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
-	
+
 		if enabled then
 			enableSystem()
 		else
 			disableSystem()
 		end
-	
+
 		updateButton()
 	end)
-	
+
 	updateButton()
 end
-coroutine.wrap(XFTQEMH_fake_script)()
-local function KPATSW_fake_script() -- ImageButton_6.LocalScript 
+coroutine.wrap(VXRQ_fake_script)()
+local function LIKJW_fake_script() -- ImageButton_6.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_6)
 
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local UserInputService = game:GetService("UserInputService")
-	
+
 	local player = Players.LocalPlayer
 	local ToggleButton = script.Parent
-	
+
 	local NOCLIP_KEY = Enum.KeyCode.N
-	
+
 	local enabled = false
 	local noclip = false
-	
+
 	local character
 	local connections = {}
 	local originalCollision = {}
-	
+
 	local function disconnectCharacterConnections()
 		for _, conn in ipairs(connections) do
 			if conn then
@@ -1467,10 +1456,10 @@ local function KPATSW_fake_script() -- ImageButton_6.LocalScript
 		end
 		table.clear(connections)
 	end
-	
+
 	local function cacheCollisionStates()
 		table.clear(originalCollision)
-	
+
 		if not character then return end
 		for _, obj in ipairs(character:GetDescendants()) do
 			if obj:IsA("BasePart") then
@@ -1478,10 +1467,10 @@ local function KPATSW_fake_script() -- ImageButton_6.LocalScript
 			end
 		end
 	end
-	
+
 	local function setNoclipState(state)
 		if not character then return end
-	
+
 		for _, obj in ipairs(character:GetDescendants()) do
 			if obj:IsA("BasePart") then
 				if state then
@@ -1494,60 +1483,60 @@ local function KPATSW_fake_script() -- ImageButton_6.LocalScript
 			end
 		end
 	end
-	
+
 	local function updateButton()
 		ToggleButton.BackgroundColor3 = enabled
 			and Color3.fromRGB(0, 255, 0)
 			or Color3.fromRGB(255, 0, 0)
 	end
-	
+
 	local function onDescendantAdded(obj)
 		if obj:IsA("BasePart") then
 			originalCollision[obj] = obj.CanCollide
-	
+
 			if enabled and noclip then
 				obj.CanCollide = false
 			end
 		end
 	end
-	
+
 	local function onCharacterAdded(char)
 		disconnectCharacterConnections()
-	
+
 		character = char
 		noclip = false
-	
+
 		cacheCollisionStates()
-	
+
 		table.insert(connections, character.DescendantAdded:Connect(onDescendantAdded))
 	end
-	
+
 	player.CharacterAdded:Connect(onCharacterAdded)
-	
+
 	if player.Character then
 		onCharacterAdded(player.Character)
 	end
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
-	
+
 		if not enabled then
 			noclip = false
 			setNoclipState(false)
 		end
-	
+
 		updateButton()
 	end)
-	
+
 	UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		if gameProcessed then return end
 		if input.KeyCode ~= NOCLIP_KEY then return end
 		if not enabled then return end
-	
+
 		noclip = not noclip
 		setNoclipState(noclip)
 	end)
-	
+
 	RunService.Stepped:Connect(function()
 		if enabled and noclip and character then
 			for _, obj in ipairs(character:GetDescendants()) do
@@ -1557,146 +1546,146 @@ local function KPATSW_fake_script() -- ImageButton_6.LocalScript
 			end
 		end
 	end)
-	
+
 	updateButton()
 end
-coroutine.wrap(KPATSW_fake_script)()
-local function JURR_fake_script() -- Bank.LocalScript 
+coroutine.wrap(LIKJW_fake_script)()
+local function WEZFX_fake_script() -- Bank.LocalScript 
 	local script = Instance.new('LocalScript', Bank)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-448, 23, -283)
 end
-coroutine.wrap(JURR_fake_script)()
-local function QUDMQAE_fake_script() -- Casino.LocalScript 
+coroutine.wrap(WEZFX_fake_script)()
+local function THHDKIC_fake_script() -- Casino.LocalScript 
 	local script = Instance.new('LocalScript', Casino)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-870, 21, -148)
 end
-coroutine.wrap(QUDMQAE_fake_script)()
-local function BGGUD_fake_script() -- BasketballCourt.LocalScript 
+coroutine.wrap(THHDKIC_fake_script)()
+local function QLWUQI_fake_script() -- BasketballCourt.LocalScript 
 	local script = Instance.new('LocalScript', BasketballCourt)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-932, 21, -481)
 end
-coroutine.wrap(BGGUD_fake_script)()
-local function KXRDQ_fake_script() -- FoodCourt1.LocalScript 
+coroutine.wrap(QLWUQI_fake_script)()
+local function MEDG_fake_script() -- FoodCourt1.LocalScript 
 	local script = Instance.new('LocalScript', FoodCourt1)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-299, 49, -623)
 end
-coroutine.wrap(KXRDQ_fake_script)()
-local function LHFY_fake_script() -- FoodCourt2.LocalScript 
+coroutine.wrap(MEDG_fake_script)()
+local function RZKW_fake_script() -- FoodCourt2.LocalScript 
 	local script = Instance.new('LocalScript', FoodCourt2)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-327, 23, 297)
 end
-coroutine.wrap(LHFY_fake_script)()
-local function YIQGRTL_fake_script() -- GunShop1.LocalScript 
+coroutine.wrap(RZKW_fake_script)()
+local function PMRP_fake_script() -- GunShop1.LocalScript 
 	local script = Instance.new('LocalScript', GunShop1)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(483, 48, -621)
 end
-coroutine.wrap(YIQGRTL_fake_script)()
-local function LYKHVU_fake_script() -- GunShop2.LocalScript 
+coroutine.wrap(PMRP_fake_script)()
+local function VIFSXYQ_fake_script() -- GunShop2.LocalScript 
 	local script = Instance.new('LocalScript', GunShop2)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-580, 8, -735)
 end
-coroutine.wrap(LYKHVU_fake_script)()
-local function OHGWQIX_fake_script() -- PlayGround.LocalScript 
+coroutine.wrap(VIFSXYQ_fake_script)()
+local function FABQET_fake_script() -- PlayGround.LocalScript 
 	local script = Instance.new('LocalScript', PlayGround)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-268, 22, -754)
 end
-coroutine.wrap(OHGWQIX_fake_script)()
-local function BGJXJ_fake_script() -- GasStation.LocalScript 
+coroutine.wrap(FABQET_fake_script)()
+local function WYYU_fake_script() -- GasStation.LocalScript 
 	local script = Instance.new('LocalScript', GasStation)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(532, 47, -249)
 end
-coroutine.wrap(BGJXJ_fake_script)()
-local function QQSCQKZ_fake_script() -- HighSchool.LocalScript 
+coroutine.wrap(WYYU_fake_script)()
+local function FQUNX_fake_script() -- HighSchool.LocalScript 
 	local script = Instance.new('LocalScript', HighSchool)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-586, 21, 336)
 end
-coroutine.wrap(QQSCQKZ_fake_script)()
-local function CNOLPQV_fake_script() -- PoliceStation.LocalScript 
+coroutine.wrap(FQUNX_fake_script)()
+local function YJMVID_fake_script() -- PoliceStation.LocalScript 
 	local script = Instance.new('LocalScript', PoliceStation)
 
 	local player = game.Players.LocalPlayer
 	local character = player.Character or player.CharacterAdded:Wait()
 	local hrp = character:WaitForChild("HumanoidRootPart")
-	
+
 	hrp.CFrame = CFrame.new(-264, 21, -73)
 end
-coroutine.wrap(CNOLPQV_fake_script)()
-local function FCVOKLS_fake_script() -- ImageButton_7.LocalScript 
+coroutine.wrap(YJMVID_fake_script)()
+local function YPKGIW_fake_script() -- ImageButton_7.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_7)
 
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
-	
+
 	local player = Players.LocalPlayer
 	local camera = workspace.CurrentCamera
-	
+
 	local ToggleButton = script.Parent
-	
+
 	local TOGGLE_KEY = Enum.KeyCode.T
 	local MAX_DISTANCE = 400            -- studs
 	local LOCK_RADIUS = 300             -- pixels from crosshair
 	local SMOOTHNESS = 28               -- higher = tighter lock
 	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
 	-- ====================
-	
+
 	local enabled = false
-	
+
 	local lockedChar = nil
 	local lockedPart = nil
 	local aimPos = nil
 	local locked = false
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -1704,40 +1693,40 @@ local function FCVOKLS_fake_script() -- ImageButton_7.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function clearLock()
 		locked = false
 		lockedPart = nil
 		lockedChar = nil
 		aimPos = nil
 	end
-	
+
 	-- ===== Your original utilities (unchanged) =====
 	local function getTorso(char)
 		return char:FindFirstChild("UpperTorso")
 			or char:FindFirstChild("Torso")
 			or char:FindFirstChild("HumanoidRootPart")
 	end
-	
+
 	local function alive(char)
 		local hum = char:FindFirstChildOfClass("Humanoid")
 		return hum and hum.Health > 0
 	end
-	
+
 	local function screenDistance(worldPos)
 		local v, onScreen = camera:WorldToViewportPoint(worldPos)
 		if not onScreen then return math.huge end
 		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
 		return (Vector2.new(v.X, v.Y) - center).Magnitude
 	end
-	
+
 	local function findTarget()
 		local myChar = player.Character
 		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
 		if not myRoot then return end
-	
+
 		local best, bestScore
-	
+
 		for _, plr in ipairs(Players:GetPlayers()) do
 			if plr ~= player and plr.Character and alive(plr.Character) then
 				local part = getTorso(plr.Character)
@@ -1756,11 +1745,11 @@ local function FCVOKLS_fake_script() -- ImageButton_7.LocalScript
 				end
 			end
 		end
-	
+
 		return best
 	end
 	-- ==============================================
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		if not enabled then
@@ -1768,12 +1757,12 @@ local function FCVOKLS_fake_script() -- ImageButton_7.LocalScript
 		end
 		updateButton()
 	end)
-	
+
 	UserInputService.InputBegan:Connect(function(input, gp)
 		if gp then return end
 		if input.KeyCode ~= TOGGLE_KEY then return end
 		if not enabled then return end
-	
+
 		if locked then
 			clearLock()
 		else
@@ -1786,67 +1775,67 @@ local function FCVOKLS_fake_script() -- ImageButton_7.LocalScript
 			end
 		end
 	end)
-	
+
 	RunService.RenderStepped:Connect(function(dt)
 		if not enabled then return end
 		if not locked then return end
-	
+
 		if not lockedChar or not alive(lockedChar) then
 			clearLock()
 			return
 		end
-	
+
 		lockedPart = getTorso(lockedChar)
 		if not lockedPart then
 			clearLock()
 			return
 		end
-	
+
 		local vel = lockedPart.AssemblyLinearVelocity
 		local predicted = lockedPart.Position + vel * PREDICTION
-	
+
 		aimPos = aimPos or predicted
 		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
 		aimPos = aimPos:Lerp(predicted, alpha)
-	
+
 		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
 	end)
-	
+
 	-- Optional: clear lock on respawn
 	player.CharacterAdded:Connect(function()
 		clearLock()
 	end)
-	
+
 	updateButton()
-	
+
 end
-coroutine.wrap(FCVOKLS_fake_script)()
-local function VTJCIBN_fake_script() -- ImageButton_8.LocalScript 
+coroutine.wrap(YPKGIW_fake_script)()
+local function BSXTQVF_fake_script() -- ImageButton_8.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_8)
 
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
-	
+
 	local player = Players.LocalPlayer
 	local camera = workspace.CurrentCamera
-	
+
 	local ToggleButton = script.Parent
-	
+
 	local TOGGLE_KEY = Enum.KeyCode.T
 	local MAX_DISTANCE = 400            -- studs
 	local LOCK_RADIUS = 300             -- pixels from crosshair
 	local SMOOTHNESS = 28               -- higher = tighter lock
 	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
 	-- ====================
-	
+
 	local enabled = false
-	
+
 	local lockedChar = nil
 	local lockedPart = nil
 	local aimPos = nil
 	local locked = false
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -1854,40 +1843,40 @@ local function VTJCIBN_fake_script() -- ImageButton_8.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function clearLock()
 		locked = false
 		lockedPart = nil
 		lockedChar = nil
 		aimPos = nil
 	end
-	
+
 	-- ===== Your original utilities (unchanged) =====
 	local function getTorso(char)
 		return char:FindFirstChild("UpperTorso")
 			or char:FindFirstChild("Torso")
 			or char:FindFirstChild("HumanoidRootPart")
 	end
-	
+
 	local function alive(char)
 		local hum = char:FindFirstChildOfClass("Humanoid")
 		return hum and hum.Health > 0
 	end
-	
+
 	local function screenDistance(worldPos)
 		local v, onScreen = camera:WorldToViewportPoint(worldPos)
 		if not onScreen then return math.huge end
 		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
 		return (Vector2.new(v.X, v.Y) - center).Magnitude
 	end
-	
+
 	local function findTarget()
 		local myChar = player.Character
 		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
 		if not myRoot then return end
-	
+
 		local best, bestScore
-	
+
 		for _, plr in ipairs(Players:GetPlayers()) do
 			if plr ~= player and plr.Character and alive(plr.Character) then
 				local part = getTorso(plr.Character)
@@ -1906,11 +1895,11 @@ local function VTJCIBN_fake_script() -- ImageButton_8.LocalScript
 				end
 			end
 		end
-	
+
 		return best
 	end
 	-- ==============================================
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		if not enabled then
@@ -1918,12 +1907,12 @@ local function VTJCIBN_fake_script() -- ImageButton_8.LocalScript
 		end
 		updateButton()
 	end)
-	
+
 	UserInputService.InputBegan:Connect(function(input, gp)
 		if gp then return end
 		if input.KeyCode ~= TOGGLE_KEY then return end
 		if not enabled then return end
-	
+
 		if locked then
 			clearLock()
 		else
@@ -1936,67 +1925,67 @@ local function VTJCIBN_fake_script() -- ImageButton_8.LocalScript
 			end
 		end
 	end)
-	
+
 	RunService.RenderStepped:Connect(function(dt)
 		if not enabled then return end
 		if not locked then return end
-	
+
 		if not lockedChar or not alive(lockedChar) then
 			clearLock()
 			return
 		end
-	
+
 		lockedPart = getTorso(lockedChar)
 		if not lockedPart then
 			clearLock()
 			return
 		end
-	
+
 		local vel = lockedPart.AssemblyLinearVelocity
 		local predicted = lockedPart.Position + vel * PREDICTION
-	
+
 		aimPos = aimPos or predicted
 		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
 		aimPos = aimPos:Lerp(predicted, alpha)
-	
+
 		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
 	end)
-	
+
 	-- Optional: clear lock on respawn
 	player.CharacterAdded:Connect(function()
 		clearLock()
 	end)
-	
+
 	updateButton()
-	
+
 end
-coroutine.wrap(VTJCIBN_fake_script)()
-local function GVWETV_fake_script() -- ImageButton_9.LocalScript 
+coroutine.wrap(BSXTQVF_fake_script)()
+local function SQDKI_fake_script() -- ImageButton_9.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_9)
 
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
-	
+
 	local player = Players.LocalPlayer
 	local camera = workspace.CurrentCamera
-	
+
 	local ToggleButton = script.Parent
-	
+
 	local TOGGLE_KEY = Enum.KeyCode.T
 	local MAX_DISTANCE = 400            -- studs
 	local LOCK_RADIUS = 300             -- pixels from crosshair
 	local SMOOTHNESS = 28               -- higher = tighter lock
 	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
 	-- ====================
-	
+
 	local enabled = false
-	
+
 	local lockedChar = nil
 	local lockedPart = nil
 	local aimPos = nil
 	local locked = false
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -2004,40 +1993,40 @@ local function GVWETV_fake_script() -- ImageButton_9.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function clearLock()
 		locked = false
 		lockedPart = nil
 		lockedChar = nil
 		aimPos = nil
 	end
-	
+
 	-- ===== Your original utilities (unchanged) =====
 	local function getTorso(char)
 		return char:FindFirstChild("UpperTorso")
 			or char:FindFirstChild("Torso")
 			or char:FindFirstChild("HumanoidRootPart")
 	end
-	
+
 	local function alive(char)
 		local hum = char:FindFirstChildOfClass("Humanoid")
 		return hum and hum.Health > 0
 	end
-	
+
 	local function screenDistance(worldPos)
 		local v, onScreen = camera:WorldToViewportPoint(worldPos)
 		if not onScreen then return math.huge end
 		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
 		return (Vector2.new(v.X, v.Y) - center).Magnitude
 	end
-	
+
 	local function findTarget()
 		local myChar = player.Character
 		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
 		if not myRoot then return end
-	
+
 		local best, bestScore
-	
+
 		for _, plr in ipairs(Players:GetPlayers()) do
 			if plr ~= player and plr.Character and alive(plr.Character) then
 				local part = getTorso(plr.Character)
@@ -2056,11 +2045,11 @@ local function GVWETV_fake_script() -- ImageButton_9.LocalScript
 				end
 			end
 		end
-	
+
 		return best
 	end
 	-- ==============================================
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		if not enabled then
@@ -2068,12 +2057,12 @@ local function GVWETV_fake_script() -- ImageButton_9.LocalScript
 		end
 		updateButton()
 	end)
-	
+
 	UserInputService.InputBegan:Connect(function(input, gp)
 		if gp then return end
 		if input.KeyCode ~= TOGGLE_KEY then return end
 		if not enabled then return end
-	
+
 		if locked then
 			clearLock()
 		else
@@ -2086,67 +2075,67 @@ local function GVWETV_fake_script() -- ImageButton_9.LocalScript
 			end
 		end
 	end)
-	
+
 	RunService.RenderStepped:Connect(function(dt)
 		if not enabled then return end
 		if not locked then return end
-	
+
 		if not lockedChar or not alive(lockedChar) then
 			clearLock()
 			return
 		end
-	
+
 		lockedPart = getTorso(lockedChar)
 		if not lockedPart then
 			clearLock()
 			return
 		end
-	
+
 		local vel = lockedPart.AssemblyLinearVelocity
 		local predicted = lockedPart.Position + vel * PREDICTION
-	
+
 		aimPos = aimPos or predicted
 		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
 		aimPos = aimPos:Lerp(predicted, alpha)
-	
+
 		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
 	end)
-	
+
 	-- Optional: clear lock on respawn
 	player.CharacterAdded:Connect(function()
 		clearLock()
 	end)
-	
+
 	updateButton()
-	
+
 end
-coroutine.wrap(GVWETV_fake_script)()
-local function JDGAVXO_fake_script() -- ImageButton_10.LocalScript 
+coroutine.wrap(SQDKI_fake_script)()
+local function VHSRTP_fake_script() -- ImageButton_10.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton_10)
 
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 	local RunService = game:GetService("RunService")
-	
+
 	local player = Players.LocalPlayer
 	local camera = workspace.CurrentCamera
-	
+
 	local ToggleButton = script.Parent
-	
+
 	local TOGGLE_KEY = Enum.KeyCode.T
 	local MAX_DISTANCE = 400            -- studs
 	local LOCK_RADIUS = 300             -- pixels from crosshair
 	local SMOOTHNESS = 28               -- higher = tighter lock
 	local PREDICTION = 0.16             -- increase if WalkSpeed is crazy fast
 	-- ====================
-	
+
 	local enabled = false
-	
+
 	local lockedChar = nil
 	local lockedPart = nil
 	local aimPos = nil
 	local locked = false
-	
+
 	local function updateButton()
 		if enabled then
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
@@ -2154,40 +2143,40 @@ local function JDGAVXO_fake_script() -- ImageButton_10.LocalScript
 			ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	end
-	
+
 	local function clearLock()
 		locked = false
 		lockedPart = nil
 		lockedChar = nil
 		aimPos = nil
 	end
-	
+
 	-- ===== Your original utilities (unchanged) =====
 	local function getTorso(char)
 		return char:FindFirstChild("UpperTorso")
 			or char:FindFirstChild("Torso")
 			or char:FindFirstChild("HumanoidRootPart")
 	end
-	
+
 	local function alive(char)
 		local hum = char:FindFirstChildOfClass("Humanoid")
 		return hum and hum.Health > 0
 	end
-	
+
 	local function screenDistance(worldPos)
 		local v, onScreen = camera:WorldToViewportPoint(worldPos)
 		if not onScreen then return math.huge end
 		local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
 		return (Vector2.new(v.X, v.Y) - center).Magnitude
 	end
-	
+
 	local function findTarget()
 		local myChar = player.Character
 		local myRoot = myChar and myChar:FindFirstChild("HumanoidRootPart")
 		if not myRoot then return end
-	
+
 		local best, bestScore
-	
+
 		for _, plr in ipairs(Players:GetPlayers()) do
 			if plr ~= player and plr.Character and alive(plr.Character) then
 				local part = getTorso(plr.Character)
@@ -2206,11 +2195,11 @@ local function JDGAVXO_fake_script() -- ImageButton_10.LocalScript
 				end
 			end
 		end
-	
+
 		return best
 	end
 	-- ==============================================
-	
+
 	ToggleButton.MouseButton1Click:Connect(function()
 		enabled = not enabled
 		if not enabled then
@@ -2218,12 +2207,12 @@ local function JDGAVXO_fake_script() -- ImageButton_10.LocalScript
 		end
 		updateButton()
 	end)
-	
+
 	UserInputService.InputBegan:Connect(function(input, gp)
 		if gp then return end
 		if input.KeyCode ~= TOGGLE_KEY then return end
 		if not enabled then return end
-	
+
 		if locked then
 			clearLock()
 		else
@@ -2236,42 +2225,42 @@ local function JDGAVXO_fake_script() -- ImageButton_10.LocalScript
 			end
 		end
 	end)
-	
+
 	RunService.RenderStepped:Connect(function(dt)
 		if not enabled then return end
 		if not locked then return end
-	
+
 		if not lockedChar or not alive(lockedChar) then
 			clearLock()
 			return
 		end
-	
+
 		lockedPart = getTorso(lockedChar)
 		if not lockedPart then
 			clearLock()
 			return
 		end
-	
+
 		local vel = lockedPart.AssemblyLinearVelocity
 		local predicted = lockedPart.Position + vel * PREDICTION
-	
+
 		aimPos = aimPos or predicted
 		local alpha = 1 - math.exp(-SMOOTHNESS * dt)
 		aimPos = aimPos:Lerp(predicted, alpha)
-	
+
 		camera.CFrame = CFrame.new(camera.CFrame.Position, aimPos)
 	end)
-	
+
 	-- Optional: clear lock on respawn
 	player.CharacterAdded:Connect(function()
 		clearLock()
 	end)
-	
+
 	updateButton()
-	
+
 end
-coroutine.wrap(JDGAVXO_fake_script)()
-local function VSSIKPB_fake_script() -- TargetFrame.LocalScript 
+coroutine.wrap(VHSRTP_fake_script)()
+local function PKKNJX_fake_script() -- TargetFrame.LocalScript 
 	local script = Instance.new('LocalScript', TargetFrame)
 
 	-- LocalScript inside TargetFrame
@@ -2279,18 +2268,18 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 	local frame = targetFrame:WaitForChild("Frame")
 	local textBox = frame:WaitForChild("TextBox")
 	local imageLabel = frame:WaitForChild("ImageLabel")
-	
+
 	local flingBtn = targetFrame:WaitForChild("Fling"):WaitForChild("ImageButton")
 	local teleportBtn = targetFrame:WaitForChild("Teleport"):WaitForChild("ImageButton")
 	local viewBtn = targetFrame:WaitForChild("View"):WaitForChild("ImageButton")
 	local headsitBtn = targetFrame:WaitForChild("HeadSit"):WaitForChild("ImageButton")
-	
+
 	local Players = game:GetService("Players")
 	local LocalPlayer = Players.LocalPlayer
 	local weld
 	local selectedTarget = nil
 	local isViewing = false
-	
+
 	-- Find target from server
 	local function findTarget(input)
 		for _, v in pairs(Players:GetPlayers()) do
@@ -2300,7 +2289,7 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 		end
 		return nil
 	end
-	
+
 	-- Update PFP from in-game player
 	local function updatePFP(player)
 		if player then
@@ -2311,7 +2300,7 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 			selectedTarget = nil
 		end
 	end
-	
+
 	-- Auto-show first server player on open
 	task.spawn(function()
 		task.wait(1)
@@ -2324,12 +2313,12 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 			updatePFP(list[1])
 		end
 	end)
-	
+
 	-- Update target as you type
 	textBox:GetPropertyChangedSignal("Text"):Connect(function()
 		updatePFP(findTarget(textBox.Text))
 	end)
-	
+
 	-- New player joins
 	Players.PlayerAdded:Connect(function(p)
 		if textBox.Text == "" then
@@ -2337,7 +2326,7 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 			updatePFP(p)
 		end
 	end)
-	
+
 	-- FLING
 	local function strongFling(target)
 		if not target or not target.Character then return end
@@ -2354,7 +2343,7 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 		end
 		hrp.CFrame = oldCF
 	end
-	
+
 	-- TELEPORT
 	local function teleportToTarget(target)
 		if not target or not target.Character then return end
@@ -2367,7 +2356,7 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 			myHRP.CFrame = newHRP.CFrame + Vector3.new(0, 3, 0)
 		end)
 	end
-	
+
 	-- VIEW (toggle)
 	local function viewPlayer(target)
 		local cam = workspace.CurrentCamera
@@ -2389,12 +2378,12 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 			end)
 		end
 	end
-	
+
 	-- HEADSIT
 	local function detach()
 		if weld then weld:Destroy() weld = nil end
 	end
-	
+
 	local function headSit(target)
 		if not target or not target.Character then return end
 		local targetHead = target.Character:FindFirstChild("Head")
@@ -2412,38 +2401,38 @@ local function VSSIKPB_fake_script() -- TargetFrame.LocalScript
 			if humanoid.Jump then detach() end
 		end)
 	end
-	
+
 	-- Button connections
 	flingBtn.MouseButton1Click:Connect(function()
 		strongFling(selectedTarget)
 	end)
-	
+
 	teleportBtn.MouseButton1Click:Connect(function()
 		teleportToTarget(selectedTarget)
 	end)
-	
+
 	viewBtn.MouseButton1Click:Connect(function()
 		viewPlayer(selectedTarget)
 	end)
-	
+
 	headsitBtn.MouseButton1Click:Connect(function()
 		headSit(selectedTarget)
 	end)
 end
-coroutine.wrap(VSSIKPB_fake_script)()
-local function SLGTKK_fake_script() -- BobDaHood.DragUI 
+coroutine.wrap(PKKNJX_fake_script)()
+local function ZZOCK_fake_script() -- BobDaHood.DragUI 
 	local script = Instance.new('LocalScript', BobDaHood)
 
 	local gui = script.Parent
 	local Frame = gui:WaitForChild("Frame")
 	local topbar = Frame:WaitForChild("TopBar")
-	
+
 	local UIS = game:GetService("UserInputService")
-	
+
 	local dragging = false
 	local dragStart
 	local startPos
-	
+
 	local function update(input)
 		local delta = input.Position - dragStart
 		Frame.Position = UDim2.new(
@@ -2453,14 +2442,14 @@ local function SLGTKK_fake_script() -- BobDaHood.DragUI
 			startPos.Y.Offset + delta.Y
 		)
 	end
-	
+
 	topbar.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1
 			or input.UserInputType == Enum.UserInputType.Touch then
 			dragging = true
 			dragStart = input.Position
 			startPos = Frame.Position
-	
+
 			input.Changed:Connect(function()
 				if input.UserInputState == Enum.UserInputState.End then
 					dragging = false
@@ -2468,7 +2457,7 @@ local function SLGTKK_fake_script() -- BobDaHood.DragUI
 			end)
 		end
 	end)
-	
+
 	UIS.InputChanged:Connect(function(input)
 		if dragging and (
 			input.UserInputType == Enum.UserInputType.MouseMovement
@@ -2477,50 +2466,50 @@ local function SLGTKK_fake_script() -- BobDaHood.DragUI
 			update(input)
 		end
 	end)
-	
-	
+
+
 end
-coroutine.wrap(SLGTKK_fake_script)()
-local function AAHAOYZ_fake_script() -- BobDaHood.ButtonLS 
+coroutine.wrap(ZZOCK_fake_script)()
+local function DHVSFSY_fake_script() -- BobDaHood.ButtonLS 
 	local script = Instance.new('LocalScript', BobDaHood)
 
 	local BobDaHood = script.Parent
 	local Frame = BobDaHood:WaitForChild("Frame")
-	
+
 	local MainButton = Frame:WaitForChild("MainButton")
 	local MainFrame = MainButton:WaitForChild("MainFrame")
-	
+
 	local AboutButton = Frame:WaitForChild("AboutButton")
 	local AboutFrame = AboutButton:WaitForChild("AboutFrame")
-	
-	
+
+
 	local TeleportButton = Frame:WaitForChild("TeleportButton")
 	local TeleportFrame = TeleportButton:WaitForChild("TeleportFrame")
-	
+
 	local TargetButton = Frame:WaitForChild("TargetButton")
 	local TargetFrame = TargetButton:WaitForChild("TargetFrame")
-	
+
 	MainButton.MouseButton1Click:Connect(function()
 		TeleportFrame.Visible = false
 		TargetFrame.Visible = false
 		AboutFrame.Visible = false
 		MainFrame.Visible = true
 	end)
-	
+
 	TeleportButton.MouseButton1Click:Connect(function()
 		TeleportFrame.Visible = true
 		TargetFrame.Visible = false
 		AboutFrame.Visible = false
 		MainFrame.Visible = false
 	end)
-	
+
 	TargetButton.MouseButton1Click:Connect(function()
 		TeleportFrame.Visible = false
 		TargetFrame.Visible = true
 		AboutFrame.Visible = false
 		MainFrame.Visible = false
 	end)
-	
+
 	AboutButton.MouseButton1Click:Connect(function()
 		TeleportFrame.Visible = false
 		TargetFrame.Visible = false
@@ -2528,22 +2517,23 @@ local function AAHAOYZ_fake_script() -- BobDaHood.ButtonLS
 		AboutFrame.Visible = true
 	end)
 end
-coroutine.wrap(AAHAOYZ_fake_script)()
-local function MJYGTTI_fake_script() -- BobDaHood.LocalScript 
+coroutine.wrap(DHVSFSY_fake_script)()
+
+local function USKKUDA_fake_script() -- BobDaHood.LocalScript 
 	local script = Instance.new('LocalScript', BobDaHood)
 
 	local UserInputService = game:GetService("UserInputService")
 	local BobDaHood = script.Parent
-	
+
 	local function toggleBobDaHood()
 		BobDaHood.Enabled = not BobDaHood.Enabled
 	end
-	
+
 	UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		if gameProcessed then return end
-		if input.KeyCode ~= Enum.KeyCode.V then return end
-	
-		toggleBobDaHood()
+		if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.V then
+			toggleBobDaHood()
+		end
 	end)
 end
-coroutine.wrap(MJYGTTI_fake_script)()
+coroutine.wrap(USKKUDA_fake_script)()
