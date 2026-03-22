@@ -1,0 +1,74 @@
+local RS = game:GetService("ReplicatedStorage")
+local player = game.Players.LocalPlayer
+
+local knit = RS
+:WaitForChild("Packages")
+:WaitForChild("_Index")
+:WaitForChild("acecateer_knit@1.7.2")
+:WaitForChild("knit")
+:WaitForChild("Services")
+
+local placeTower = knit:WaitForChild("TowerService"):WaitForChild("RF"):WaitForChild("PlaceTower")
+local replayRemote = knit:WaitForChild("GameService"):WaitForChild("RF"):WaitForChild("EndGameVote")
+local startRound = knit:WaitForChild("GameService"):WaitForChild("RF"):WaitForChild("VoteStartRound")
+
+local function getHRP()
+	local char = player.Character or player.CharacterAdded:Wait()
+	return char:WaitForChild("HumanoidRootPart")
+end
+
+-- Infinite tower placement
+task.spawn(function()
+	while true do
+		task.wait(1)
+
+		local hrp = getHRP()
+
+		local radius = 20
+		local angle = math.random() * math.pi * 2
+		local distance = math.random() * radius
+
+		local offset = Vector3.new(
+			math.cos(angle) * distance,
+			0,
+			math.sin(angle) * distance
+		)
+
+		local origin = hrp.Position + Vector3.new(0,10,0) + offset
+		local direction = Vector3.new(0,-200,0)
+
+		local params = RaycastParams.new()
+		params.FilterType = Enum.RaycastFilterType.Exclude
+		params.FilterDescendantsInstances = {player.Character}
+
+		local result = workspace:Raycast(origin, direction, params)
+
+		if result then
+			local pos = result.Position + Vector3.new(0,1,0)
+
+			pcall(function()
+				placeTower:InvokeServer(CFrame.new(pos),6)
+			end)
+		end
+	end
+end)
+
+-- Infinite replay vote
+task.spawn(function()
+	while true do
+		task.wait(5)
+		pcall(function()
+			replayRemote:InvokeServer("Replay")
+		end)
+	end
+end)
+
+-- Infinite start round vote
+task.spawn(function()
+	while true do
+		task.wait(5)
+		pcall(function()
+			startRound:InvokeServer()
+		end)
+	end
+end)
