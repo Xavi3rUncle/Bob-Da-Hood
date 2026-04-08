@@ -1,0 +1,176 @@
+local OwnerUI = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ReduceLag = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local ClubSetup = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local AirLock = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local DropMoney = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local RedeemCode = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local SetFpsCap = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+OwnerUI.Name = "OwnerUI"
+OwnerUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+OwnerUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = OwnerUI
+Frame.BackgroundColor3 = Color3.fromRGB(132, 0, 130)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.35189873, 0, 0.416352212, 0)
+Frame.Size = UDim2.new(0.295358658, 0, 0.164779872, 0)
+
+ReduceLag.Name = "ReduceLag"
+ReduceLag.Parent = Frame
+ReduceLag.BackgroundColor3 = Color3.fromRGB(0, 255, 64)
+ReduceLag.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ReduceLag.BorderSizePixel = 0
+ReduceLag.Position = UDim2.new(-8.07217191e-08, 0, 0, 0)
+ReduceLag.Size = UDim2.new(0.241595998, 0, 0.381679386, 0)
+ReduceLag.Font = Enum.Font.SourceSansBold
+ReduceLag.Text = "ReduceLag"
+ReduceLag.TextColor3 = Color3.fromRGB(0, 0, 0)
+ReduceLag.TextScaled = true
+ReduceLag.TextSize = 14.000
+ReduceLag.TextWrapped = true
+
+UICorner.Parent = ReduceLag
+
+UICorner_2.Parent = Frame
+
+ClubSetup.Name = "ClubSetup"
+ClubSetup.Parent = Frame
+ClubSetup.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClubSetup.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClubSetup.BorderSizePixel = 0
+ClubSetup.Position = UDim2.new(0.240122736, 0, -0.0153056802, 0)
+ClubSetup.Size = UDim2.new(0.238950893, 0, 0.381679386, 0)
+ClubSetup.Font = Enum.Font.SourceSansBold
+ClubSetup.Text = "ClubSetup"
+ClubSetup.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClubSetup.TextScaled = true
+ClubSetup.TextSize = 14.000
+ClubSetup.TextWrapped = true
+
+UICorner_3.Parent = ClubSetup
+
+AirLock.Name = "AirLock"
+AirLock.Parent = Frame
+AirLock.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+AirLock.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AirLock.BorderSizePixel = 0
+AirLock.Position = UDim2.new(-8.07217191e-08, 0, 0.381140321, 0)
+AirLock.Size = UDim2.new(0.240122676, 0, 0.381679386, 0)
+AirLock.Font = Enum.Font.SourceSansBold
+AirLock.Text = "AirLock"
+AirLock.TextColor3 = Color3.fromRGB(0, 0, 0)
+AirLock.TextScaled = true
+AirLock.TextSize = 14.000
+AirLock.TextWrapped = true
+
+UICorner_4.Parent = AirLock
+
+DropMoney.Name = "DropMoney"
+DropMoney.Parent = Frame
+DropMoney.BackgroundColor3 = Color3.fromRGB(124, 244, 255)
+DropMoney.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DropMoney.BorderSizePixel = 0
+DropMoney.Position = UDim2.new(0.245412901, 0, 0.365834624, 0)
+DropMoney.Size = UDim2.new(0.225725442, 0, 0.381679386, 0)
+DropMoney.Font = Enum.Font.SourceSansBold
+DropMoney.Text = "DropMoney"
+DropMoney.TextColor3 = Color3.fromRGB(0, 0, 0)
+DropMoney.TextScaled = true
+DropMoney.TextSize = 14.000
+DropMoney.TextWrapped = true
+
+UICorner_5.Parent = DropMoney
+
+RedeemCode.Name = "RedeemCode"
+RedeemCode.Parent = Frame
+RedeemCode.BackgroundColor3 = Color3.fromRGB(255, 225, 0)
+RedeemCode.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RedeemCode.BorderSizePixel = 0
+RedeemCode.Position = UDim2.new(0.477812499, 0, 0.381101787, 0)
+RedeemCode.Size = UDim2.new(0.225725487, 0, 0.381679386, 0)
+RedeemCode.Font = Enum.Font.SourceSansBold
+RedeemCode.Text = "RedeemCode"
+RedeemCode.TextColor3 = Color3.fromRGB(0, 0, 0)
+RedeemCode.TextScaled = true
+RedeemCode.TextSize = 14.000
+RedeemCode.TextWrapped = true
+
+UICorner_6.Parent = RedeemCode
+
+SetFpsCap.Name = "SetFpsCap"
+SetFpsCap.Parent = Frame
+SetFpsCap.BackgroundColor3 = Color3.fromRGB(82, 66, 255)
+SetFpsCap.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SetFpsCap.BorderSizePixel = 0
+SetFpsCap.Position = UDim2.new(0.477812499, 0, 0, 0)
+SetFpsCap.Size = UDim2.new(0.225725487, 0, 0.381679386, 0)
+SetFpsCap.Font = Enum.Font.SourceSansBold
+SetFpsCap.Text = "SetFpsCap"
+SetFpsCap.TextColor3 = Color3.fromRGB(0, 0, 0)
+SetFpsCap.TextScaled = true
+SetFpsCap.TextSize = 14.000
+SetFpsCap.TextWrapped = true
+
+UICorner_7.Parent = SetFpsCap
+
+-- Scripts:
+
+local function QGNUB_fake_script() -- Frame.DragUI 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIS = game:GetService("UserInputService")
+	
+	local frame = script.Parent
+	local dragging = false
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		frame.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	frame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			dragInput = input
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(QGNUB_fake_script)()
